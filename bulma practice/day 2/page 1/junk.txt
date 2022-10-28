@@ -1,0 +1,117 @@
+                    <div class="columns">
+                        
+                        <!-- events -->
+                        <div class="column">
+                            <div class="card">
+                                <header class="card-header">
+                                  <p class="card-header-title has-text-weight-normal">
+                                   Events
+                                  </p>
+                                  <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                  </button>
+                                </header>
+
+                                <div class="card-table">
+                                    <div class="content">
+                                        <table class="table is-striped is-fullwidth">
+                                            <tbody>
+                                                <!-- table row -->
+                                                <tr>
+                                                    <td><i class="fa-solid fa-bell"></i></td>
+                                                    <td>Lorem ipsum dolor sits</td>
+                                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                </tr> 
+                                                <tr>
+                                                    <td><i class="fa-solid fa-bell"></i></td>
+                                                    <td>Lorem ipsum dolor sits</td>
+                                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                </tr> 
+                                                <tr>
+                                                    <td><i class="fa-solid fa-bell"></i></td>
+                                                    <td>Lorem ipsum dolor sits</td>
+                                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                </tr> 
+                                                <tr>
+                                                    <td><i class="fa-solid fa-bell"></i></td>
+                                                    <td>Lorem ipsum dolor sits</td>
+                                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                </tr> 
+                                                <tr>
+                                                    <td><i class="fa-solid fa-bell"></i></td>
+                                                    <td>Lorem ipsum dolor sits</td>
+                                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                </tr> 
+                                                
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                                
+                                <footer class="card-footer">
+                                    <a href="#" class="card-footer-item">View All</a>
+
+
+                                </footer>
+                                
+                            </div>
+
+                        </div>
+
+                        <!-- searches -->
+                        <div class="column">
+                            <div class="card">
+                                <header class="card-header">
+                                  <p class="card-header-title has-text-weight-normal">
+                                   Inventory Search
+                                  </p>
+                                  <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                  </button>
+                                </header>
+
+                                <div class="card-content">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input is-medium" type="text">
+                                        <span class="icon is-left">
+                                          <i class="fas fa-search"></i>
+                                        </span>
+                                        <span class="icon is-right">
+                                          <i class="fas fa-check"></i>
+                                        </span>
+                                      </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <header class="card-header">
+                                  <p class="card-header-title has-text-weight-normal">
+                                   Inventory Search
+                                  </p>
+                                  <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                  </button>
+                                </header>
+
+                                <div class="card-content">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input is-medium" type="text">
+                                        <span class="icon is-left">
+                                          <i class="fas fa-search"></i>
+                                        </span>
+                                        <span class="icon is-right">
+                                          <i class="fas fa-check"></i>
+                                        </span>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
