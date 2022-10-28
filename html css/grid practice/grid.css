@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background: #f5f5f5;
+}
+
+.container{
+    max-width: 960px;
+    /* auto puts same amount of margin on both sides and same for top and bottom */
+    margin: 100px auto; 
+    padding: 10px;
+    display: grid;
+
+    /* making three columns three rows */
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 200px); */
+    gap: 10px;
+    /* height: 100vh; */
+}
+
+.item{
+    background-color: steelblue;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    border: solid 1px skyblue;
+}
+
+/* grab all eleemts with class item and give me the first one */
+.item:nth-of-type(1){ 
+    background: #000;
+    /* span accross two columns (ends at third column) */
+    grid-column: 1/3;
+}
+
+.item:nth-of-type(3){
+    background-color: #555;
+    grid-row: 2/4;
+}
+
+
+.item:nth-of-type(4){
+    background-color: aquamarine;
+    grid-column: 2/4;
+    grid-row: 2/5;
+}
