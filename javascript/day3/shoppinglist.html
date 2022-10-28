@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <p>Enter a new item: <input type="text"><button id="add">Add Item</button></p>
+        <ul id="shoppingList">
+            <li>
+                <p>Eggs <button class="delete">Delete</button></p>
+            </li>
+            <li>
+                <p>Milk <button class="delete">Delete</button></p>
+            </li>
+            <li>
+                <p>Bread <button class="delete">Delete</button></p>
+            </li>
+            <li>
+                <p>Humous <button class="delete">Delete</button></p>
+            </li>
+        </ul>
+    </section>
+</body>
+
+<script>
+    let add = document.querySelector('section #add');
+    let input = document.querySelector('section input');
+    const ul = document.querySelector('ul');
+    let del = document.querySelectorAll('.delete');
+
+
+    function setItemList(){
+        del = document.querySelectorAll('.delete');
+    }
+
+    function deleteItem(){
+        for (let i = 0; i < del.length; i++) {
+            del[i].onclick = function(){
+                del[i].closest('li').remove();
+            }      
+        }
+    }
+    
+
+    add.onclick = function(){
+        let food = input.value + " ";
+        input.value = "";
+
+        const li = document.createElement('li');
+        li.className = "delete";
+
+        const foodPara = document.createElement('p');
+        const foodDelete = document.createElement('button');
+        foodDelete.textContent = "Delete";
+
+        foodPara.textContent = food;
+
+        ul.appendChild(li);
+        li.appendChild(foodPara);
+        foodPara.appendChild(foodDelete);
+
+        //every time a new element is added, del (array containing all delete buttons) is updated to contain new one 
+        setItemList();
+        //delete button onclick is stated again to listen to updated array of delete buttons
+        deleteItem();
+    }
+
+    //delete button onclick listener first time page loads
+    deleteItem();
+
+
+
+
+</script>
+</html>
