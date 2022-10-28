@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="hamburger.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee Shade">
+        <title>Ted's Skateboards</title>
+    </head>
+    <body>
+        
+   
+        <div class="container">
+          <!-- nav bar -->
+          <div class="item">
+            <nav class="top-nav">
+              <div class="main-logo">
+                Ted's Skateboards
+              </div>
+              <input id="menu-toggle" type="checkbox" />
+              <!-- hamburger menu button -->
+              <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+              <!-- links -->
+              <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="skateboards.html">Products</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us!</a></li>
+              </ul>
+            </nav>
+          </div>
+         
+          <!-- Header Showcase -->
+          <div class="item">
+            <header id="showcase">
+              <h1>Your Dream Skateboard Company!</h1>
+            </header>
+          </div>
+
+          <!-- Body 1 bestsellers-->
+          <div class="item">
+            <section>
+              <h1>Our Bestsellers</h1>
+                <!-- carousel -->
+                <div class="carousel">
+                  <ul class="slides">
+                    <!-- circle button for img 1 (radio input)-->
+                    <input type="radio" name="radio-buttons" id="img-1" checked />
+                    <!-- product 1 (slide 1)-->
+                    <!-- text -->
+                    <li class="slide-container">
+                      <!-- img -->
+                      <div class="slide-image">
+                        <!-- link to take to product page -->
+                        <a href="#">
+                          <img src="images/product1.png">
+                        </a>
+                      </div>
+                    </li>
+        
+                    <!-- circle button for img 2 (radio input)-->
+                    <input type="radio" name="radio-buttons" id="img-2" />
+                    <!-- product 2 (slide 2)-->
+                    <li class="slide-container">
+                      <!-- img -->
+                      <div class="slide-image">
+                        <!-- link to take to product page -->
+                        <a href="#">
+                          <img src="images/product2.png">
+                        </a>
+                      </div>
+                    </li>
+        
+                    <!-- circle button for img 3 (radio input)-->
+                    <input type="radio" name="radio-buttons" id="img-3" />
+                    <!-- product 3 (slide 3)-->
+                    <li class="slide-container">
+                      <!-- img -->   
+                      <div class="slide-image">
+                        <!-- link to take to product page -->
+                        <a href="#">
+                          <img src="images/product3.png">
+                        </a>
+                      </div>
+                    
+
+                    </li>
+                    <!-- circle buttons to toggle between slides -->
+                    <div class="carousel-dots">
+                      <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                      <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                      <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+                    </div>
+                  </ul>
+                </div>
+
+                <!-- product display -->
+                <!-- all products -->
+                <div class="product-display-container">
+                  <ul class="product-display">
+                    <!-- product -->
+                    <li>
+                        <div class="product">
+                          <!-- img within <a> tag so when img clicked it takes user to that product's page-->
+                          <a href="#">
+                            <img src="images/product1.png">
+                          </a>
+                            <!-- product text content -->
+                            <div class="product-content">
+                                <a class="product-title" href="#">UFOs Skateboard</a>
+                                <p>Lorem ipsum do li or sit amet conse adipiy elit. Ia cim odi labore ducie numquam illum adipisci quis sedi sit. In, nec sesi tatibus. Sed do temi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- product -->
+                    <li>
+                        <div class="product">
+                          <!-- img -->
+                          <a href="#">
+                            <img src="images/product2.png">
+                          </a>
+                            <!-- product text content -->
+                            <div class="product-content">
+                                <a class="product-title" href="#">Smile Skateboard</a>
+                                <p>Lorem ipsum do li or sit amet conse adipiy elit. Ia cim odi labore ducie numquam illum adipisci quis sedi sit. In, nec sesi tatibus. Sed do temi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- product -->
+                    <li>
+                        <div class="product">
+                          <!-- img -->
+                            <a href="#">
+                              <img src="images/product3.png">
+                            </a>
+                            <!-- product text content -->
+                            <div class="product-content">
+                                <a class="product-title" href="#">Black Skateboard</a>
+                                <p>Lorem ipsum do li or sit amet conse adipiy elit. Ia cim odi labore ducie numquam illum adipisci quis sedi sit. In, nec sesi tatibus. Sed do temi.</p>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+            </section>
+
+
+          </div>
+
+          <!-- Body 2 John's story IMG-->
+          <div class="item"></div>
+          
+          <!-- Body 2 John's story TEXT-->
+          <div class="item">
+            <section>
+              <h1>John's Story</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus asperiores quae illo inventore, magni nihil esse optio laudantium, molestias beatae in, amet officia nostrum sint! Esse aspernatur blanditiis voluptatem laudantium aperiam pariatur mollitia alias quos illo maiores, voluptatum similique non sit officia autem obcaecati quis ipsum accusantium et voluptas adipisci accusamus? Mollitia libero quod ad, nemo neque aspernatur vitae iste!</p>
+              <!-- learn more button -->
+              <input type="button" name="learn-more" class="learn-more" value="Learn More">
+            </section>
+          </div>
+
+          <!-- Body 3 newsletter -->
+          <div class="item">
+            <section>
+              <!-- newsletter header -->
+              <h1>newsletter Signup</h1>
+              <!-- newsletter forms -->
+              <div class="submit-form">
+                <div c
+                ass="email">
+                  <!-- email form -->
+                  <h2>Email</h2>
+                  <input type="email" name="email" class="email-form" placeholder="Email">
+                </div>
+                <div class="name">
+                  <!-- name form -->
+                  <h2>Name</h2>
+                  <input type="text" name="name" class="name-form" placeholder="Name">
+                </div>
+                <!-- submit button -->
+                <input type="button" name="submit" class="submit" value="Submit">
+              </div>
+            </section>
+          </div>
+
+          <!-- Footer -->
+          <div class="item">
+              <footer>
+                <!-- name header -->
+                <h1>Teddy Porfiris &copy;</h1>
+                  <!-- social media images  -->
+                  <div class="icons">
+                    <a href="#" class="icon-link">
+                      <img src="images/instagram.png" alt="" class="icon">
+                    </a>
+                    <a href="#" class="icon-link">
+                      <img src="images/twitter.png" alt="" class="icon">
+                    </a>
+                    <a href="#" class="icon-link">
+                      <img src="images/facebook.png" alt="" class="icon">
+                    </a>
+                </div>
+              </footer>
+          </div>
+
+      </div>
+
+    </body>
+</html>

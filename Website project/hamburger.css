@@ -1,0 +1,173 @@
+/* from https://alvarotrigo.com/blog/hamburger-menu-css/ */
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: #FF4A4A;
+}
+
+/* formatting top nav bar containing logo and hamburger toggler */
+.top-nav {
+  /* making nav bar a flex box */
+  display: flex;
+  /* putting items in flex box into a row */
+  flex-direction: row;
+  /* centering items on cross axis */
+  align-items: center;
+  /* putting space between logo and hamburger toggler with space-between */
+  justify-content: space-between;
+  /* color of nav bar */
+  background-color: #00BAF0;
+  background: linear-gradient(to left, #FF4A4A, #FF9551);
+  color: #FFF;
+  /* sizing/positioning nav bar and its contents */
+  padding: 1em;
+  height: 100%;
+  width: 100%;  
+}
+
+.main-logo{
+  font-family: 'Audiowide', sans-serif;
+}
+
+/* positioning links in drop down and making them invisible when not viewed in dropdown */
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* hamburger menu toggler design*/
+.menu-button-container {
+  /* display: none; */
+  /* sizing menu toggler */
+  height: 100%;
+  width: 30px;
+  /* makes cursor pointer when over toggler */
+  cursor: pointer;
+  /* flex-direction: column; */
+  /* centering main and cross axis */
+  justify-content: center;
+  align-items: center;
+}
+
+/* hamburger menu toggler checks checkbox to activate dropdown. we don't want checkbox to be shown so we don't display it */
+#menu-toggle {
+  display: none;
+} 
+
+/* lines of hamburger menu toggler */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  /* positioning, sizing, and coloring lines of toggler */
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  /* transition when toggler is clicked */
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  /* making lines of hamburger rounded */
+  border-radius: 2px; 
+}
+
+/* top line of hamburger menu toggler (originally all lines in the middle, now one of them moved up higher via negative margin) */
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+/* bottom line of hamburger menu toggler (originally all lines in the middle, now one of them moved down lower via larger margin) */
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+
+/* turning hamburger lines into x (and vice versa) when clicked   */
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+
+
+/* dropdown menu as flex box */
+.menu-button-container {
+  display: flex;
+}
+
+
+.menu {
+  /* positioning dropdown menu */
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  left: 0;
+  /* stacks items*/
+  flex-direction: column;
+  /* extends each item accross whole page */
+  width: 100%;
+  /* centers items on main and cross axis */
+  justify-content: center;
+  align-items: center;
+}
+
+
+#menu-toggle ~ .menu li {
+  /* making dropdown invisible until toggler clicked */
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* making appearance animation of dropdown smooth */
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+#menu-toggle:checked ~ .menu li {
+  /* formatting container each item in dropdown menu sits in */
+  border: 1px solid #333; 
+  height: 2.5em;
+  padding: 0.5em;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* formatting each item in dropdown menu */
+.menu > li {
+  /* making each item in dropdown menu flex box */
+  display: flex;
+  /* centering text in item*/
+  justify-content: center; 
+  /* positioning/sizing */
+  margin: 0;
+  padding: 0.5em 0;
+  width: 100%;
+  /* color of text */
+  color: white;
+  /* background color */
+  background-color: #222;
+}
+
+/* .menu > li:not(:last-child) {
+  border-bottom: 100px solid #444;
+} */
