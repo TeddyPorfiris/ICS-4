@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body onload="todayDate()">
+    <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="img" href="sports.html">
+            <img src="nfl.png">
+          </a>
+
+          <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      
+
+
+        <div class="navbar-menu" id="nav-links">
+          <div class="navbar-start">
+            <a class="navbar-item" href="games.html">
+              Games
+            </a>
+      
+            <a class="navbar-item" href="admin.html">
+              Add Game
+            </a>
+          </div>
+      
+        </div>
+    </nav>
+
+    <section class="hero is-info is-small mt-4">
+        <div class="hero-body">
+            <p class="title">
+            Enter Game
+            </p>
+        </div>
+    </section>
+
+    <div class="popup-container"></div>
+
+    <section class="section">
+        <div class="columns mt-4">
+
+            <div class="column">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- home team -->
+                        <h1 class="card-header-title">Home Team</h1>
+                    </div>
+                    <div class="card-content" id="slay">
+                        
+                        <div class="select is-fullwidth">
+                            <select id="nameHome" class="mb-4">
+                            <option>Arizona Cardinals</option>
+                            <option>Atlanta Falcons</option>
+                            <option>Baltimore Ravens</option>
+                            <option>Buffalo Bills</option>
+                            <option>Carolina Panthers</option>
+                            <option>Chicago Bears</option>
+                            <option>Cincinnati Bengals</option>
+                            <option>Cleveland Browns</option>
+                            <option>Dallas Cowboys</option>
+                            <option>Denver Broncos</option>
+                            <option>Detroit Lions</option>
+                            <option>Green Bay Packers</option>
+                            <option>Houston Texans</option>
+                            <option>Indianapolis Colts</option>
+                            <option>Jacksonville Jaguars</option>
+                            <option>Kansas City Chiefs</option>
+                            <option>Las Vegas Raiders</option>
+                            <option>Los Angeles Chargers</option>
+                            <option>Los Angeles Rams</option>
+                            <option>Miami Dolphins</option>
+                            <option>Minnesota Vikings</option>
+                            <option>New England Patriots</option>
+                            <option>New Orleans Saints</option>
+                            <option>New York Giants</option>
+                            <option>New York Jets</option>
+                            <option>Philadelphia Eagles</option>
+                            <option>Pittsburgh Steelers</option>
+                            <option>San Fransisco 49ers</option>
+                            <option>Seattle Seahawks</option>
+                            <option>Tampa Bay Buccaneers</option>
+                            <option>Tennessee Titans</option>            
+                            </select>
+
+                            <input type="number" placeholder="Enter Score" class="input" id="scoreHome">
+                        </div>
+
+                    </div>
+                </div>                 
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- away team -->
+                        <h1 class="card-header-title">Away Team</h1>
+                    </div>
+                    <div class="card-content">
+                        <div class="select is-fullwidth">
+                            <select id="nameAway" class="mb-4">
+                            <option>Arizona Cardinals</option>
+                            <option selected>Atlanta Falcons</option>
+                            <option>Baltimore Ravens</option>
+                            <option>Buffalo Bills</option>
+                            <option>Carolina Panthers</option>
+                            <option>Chicago Bears</option>
+                            <option>Cincinnati Bengals</option>
+                            <option>Cleveland Browns</option>
+                            <option>Dallas Cowboys</option>
+                            <option>Denver Broncos</option>
+                            <option>Detroit Lions</option>
+                            <option>Green Bay Packers</option>
+                            <option>Houston Texans</option>
+                            <option>Indianapolis Colts</option>
+                            <option>Jacksonville Jaguars</option>
+                            <option>Kansas City Chiefs</option>
+                            <option>Las Vegas Raiders</option>
+                            <option>Los Angeles Chargers</option>
+                            <option>Los Angeles Rams</option>
+                            <option>Miami Dolphins</option>
+                            <option>Minnesota Vikings</option>
+                            <option>New England Patriots</option>
+                            <option>New Orleans Saints</option>
+                            <option>New York Giants</option>
+                            <option>New York Jets</option>
+                            <option>Philadelphia Eagles</option>
+                            <option>Pittsburgh Steelers</option>
+                            <option>San Fransisco 49ers</option>
+                            <option>Seattle Seahawks</option>
+                            <option>Tampa Bay Buccaneers</option>
+                            <option>Tennessee Titans</option>            
+                            </select>
+
+                            <input type="number" placeholder="Enter Score" class="input" id="scoreAway">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- date -->
+                        <h1 class="card-header-title">Date/Submit</h1>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <input class="input" type="date" id="date">
+                        </div>
+
+                        <!-- submit -->
+                        <div>
+                            <button class="button mt-5 is-fullwidth" onclick="addGame()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+        
+        </div>
+    </section>
+
+    <footer class="footer has-background-info has-text-white">
+        <div class="content has-text-centered">
+          <p>
+            <b>NFL Sports Application</b> by Teddy Porfiris   
+          </p>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+
+    let teamsAFC = JSON.parse(localStorage['teamsAFC']);
+    let teamsNFC = JSON.parse(localStorage['teamsNFC']);
+
+    let gamePageArray = [];
+
+    function addGame() {
+        //gets values from input fields
+        let nameHome = document.querySelector('#nameHome').value;
+        let scoreHome = parseInt(document.querySelector('#scoreHome').value);
+
+        let nameAway = document.querySelector('#nameAway').value;
+        let scoreAway = parseInt(document.querySelector('#scoreAway').value);
+
+        let date = document.querySelector('#date').value;
+
+        //if the user selects the same, team in both dropdowns, don't continue the code and alert user
+        if (nameHome==nameAway){
+            popup("You cannot select the same team");
+            return;
+        }
+
+        //if the user didn't input a score or a date
+        if (scoreHome.length == 0 || scoreAway.length == 0 || date.length == 0){
+            popup("You haven't completed all the forms!")
+            return;
+        }
+
+        //game objects
+        const gameHomeTeam = {
+            'homeTeam': nameHome,
+            'awayTeam': nameAway,
+            'homeScore': scoreHome,
+            'awayScore': scoreAway,
+            'opp': nameAway,
+            'oppScore': scoreAway,
+            'myScore': scoreHome,
+            'date': date
+        };
+
+        const gameAwayTeam = {
+            'homeTeam': nameHome,
+            'awayTeam': nameAway,
+            'homeScore': scoreHome,
+            'awayScore': scoreAway,
+            'opp': nameHome,
+            'oppScore': scoreHome,
+            'myScore': scoreAway,
+            'date': date
+        };
+
+        //getting the team object that has the name the user specified in the input field
+        //searching through AFC JSON first and if its not there then the NFC JSON
+        //searching for the home team first
+        let homeTeam = teamsAFC.filter(team => team.fullName == nameHome);
+        if (homeTeam.length == 0)
+            homeTeam = teamsNFC.filter(team => team.fullName == nameHome);
+        //searching for away team
+        let awayTeam = teamsAFC.filter(team => team.fullName == nameAway);
+        if (awayTeam.length == 0)
+            awayTeam = teamsNFC.filter(team => team.fullName == nameAway);
+
+        //adding game data to the team's games array
+        gameData(homeTeam, gameHomeTeam, scoreHome, scoreAway);
+        gameData(awayTeam, gameAwayTeam, scoreAway, scoreHome);
+
+    
+        //updating the teams data in the JSON with this new data added
+        localStorage.setItem('teamsAFC', JSON.stringify(teamsAFC));
+        localStorage.setItem('teamsNFC', JSON.stringify(teamsNFC));
+
+        //created a separate array containing all the games for the page where all the games are displayed
+        gamePageArray.push(gameHomeTeam);
+        //adding this array to localstorage
+        localStorage.setItem('gamesArray', JSON.stringify(gamePageArray));
+        popup('Added!')
+   }
+
+   //adds game data to team and updates other values (wins, losses, etc.) based off of who won/loss the game
+   function gameData(team, gameTeam, score1, score2){
+        //adds game object to team's games array
+        team[0].games.push(gameTeam);
+
+        //updating win/loss/tie value for the team
+        if (score1 > score2)
+            team[0].wins = team[0].wins + 1;
+        else if (score1 < score2)
+            team[0].losses = team[0].losses + 1;
+        else
+            team[0].ties = team[0].ties + 1;
+
+        
+        team[0].PCT = calculatePCT(team);
+        team[0].conf = confRecord(team);
+        team[0].homeRec = homeRecord(team);
+        team[0].awayRec = awayRecord(team);
+        team[0].streak = winStreak(team);
+        
+   }
+
+
+
+    function calculatePCT(team){
+        let pct = parseInt(team[0].wins)/team[0].games.length;
+        if (pct == 0)
+            return 0;
+        else
+            return pct.toFixed(2);
+    }
+
+
+    function confRecord(team){
+        let confWins = 0;
+        let confLosses = 0;
+        let confTies = 0;
+        for (let i = 0; i < team[0].games.length; i++) {
+            let game = team[0].games[i];
+            //going through all the team's games and finding which opponents were in the team's conference
+            if (teamConf(team[0].fullName) == teamConf(game.opp)){
+                //checking who won that game with the same conf opponent 
+                //if opponent lost update wins for team we are focussing on
+                if (game.myScore > game.oppScore)
+                    confWins++;
+                //if opponent won update losses for team we are focussing on
+                else if (game.myScore < game.oppScore)
+                    confLosses++;
+                else //if opponent tied update ties
+                    confTies++;
+            }
+        }
+        return `${confWins}-${confLosses}-${confTies}`;
+    }
+
+    function teamConf(teamName){
+        //finding which conf team is in
+        let conf = 'AFC';
+        let teamInAFC = teamsAFC.filter(team => team.fullName == teamName);
+        if (teamInAFC.length == 0)
+            conf = 'NFC'
+        
+        return conf;        
+    }
+
+
+    function homeRecord(team){
+        //if team we're focussing on is home team and that team won 
+        let homeWins = 0;
+        let homeLosses = 0;
+        let homeTies = 0;
+        for (let i = 0; i < team[0].games.length; i++) {
+            let game = team[0].games[i];
+            //if the name of the team we are focussing on is the home team of the game
+            if (team[0].fullName == game.homeTeam){
+                
+                //checking who won the game
+                //if opponent lost update wins for team we are focussing on
+                if (game.myScore > game.oppScore)
+                    homeWins++;
+                //if opponent won update losses for team we are focussing on
+                else if (game.myScore < game.oppScore)
+                    homeLosses++;
+                else //if opponent tied update ties
+                    homeTies++;
+                
+            }
+        }
+        return`${homeWins}-${homeLosses}-${homeTies}`;
+    }
+
+    function awayRecord(team){
+        let awayWins = 0;
+        let awayLosses = 0;
+        let awayTies = 0;
+
+        for (let i = 0; i < team[0].games.length; i++) {
+            let game = team[0].games[i];
+            //if the name of the team we are focussing on is the awway team of the game    
+            if (team[0].fullName == game.awayTeam){
+                //checking who won the game
+                //if opponent lost update wins for team we are focussing on
+                if (game.myScore > game.oppScore)
+                    awayWins++;
+                //if opponent won update losses for team we are focussing on
+                else if (game.myScore < game.oppScore)
+                    awayLosses++;
+                else //if opponent tied update ties
+                    awayTies++;             
+            }
+        }
+        return`${awayWins}-${awayLosses}-${awayTies}`;
+    }
+
+    function winStreak(team){
+        let winStreak = 0;
+        for (let i = 0; i < team[0].games.length; i++) {
+            let game = team[0].games[i];
+
+            //checking who won the game
+            //if opponent lost update winStreak for team we are focussing on
+            if (game.myScore > game.oppScore)
+                winStreak++;
+            else //if team we are focussing lost or tied set winStreak to 0
+                winStreak = 0;
+        }
+        
+        return winStreak;
+    }
+
+
+    //form validation on date input. Cannot input score of future date.
+    function todayDate(){
+        //creating new Date and getting today's date
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+        //formatting date
+        today = yyyy + '-' + mm + '-' + dd;
+
+        //setting max date attribute of date input element to today's date
+        let dateInput = document.querySelector('#date');
+        dateInput.setAttribute('max', today);
+    }
+
+
+    function popup(message){
+
+        //creating popup
+        let notificationContainer = document.createElement('div');
+        notificationContainer.classList.add('notification');
+        notificationContainer.classList.add('is-danger');
+        notificationContainer.classList.add('mt-4');
+        notificationContainer.textContent = message;
+        notificationContainer.style.display = 'block';
+
+        let popupContainer = document.querySelector('.popup-container');
+        popupContainer.appendChild(notificationContainer)
+
+        //displaying popup and then it disapears after 2500 ms
+        setTimeout(() => {
+            notificationContainer.style.display = 'none';
+        }, 2500);
+        
+    }
+
+
+    //hamburger menu toggle
+    const burgerIcon = document.querySelector('#burger');
+    const navbarMenu = document.querySelector('#nav-links');
+
+    //if the hamburger menu is clicked, add the class to the nav bar menu element 'is-active' to display menu items. when clicked again hide menu items
+    burgerIcon.addEventListener('click', () => {
+        navbarMenu.classList.toggle('is-active');
+    });
+</script>
+
+</html>

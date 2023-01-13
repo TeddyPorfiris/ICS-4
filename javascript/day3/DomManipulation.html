@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Simple DOM Example</title>
+
+<body>
+   <section>
+      <img id = "dino1" src="images/dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+      <img id = "dino2" src="images/dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+      <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+   </section>
+</body>
+
+<script>
+    // let dinosaur = document.querySelectorAll('img');
+    // let paragraph = document.querySelector('p');
+
+    // let anchor = document.querySelector('a')
+    // anchor.textContent = 'Mozilla Developer Network';
+    // anchor.href = 'https://developer.mozilla.org';  
+
+    // location where we want new element to be added
+    const section = document.querySelector('section');
+    // new paragraph element created
+    const para = document.createElement('p');
+    para.textContent = 'We hope you enjoyed the ride.';
+    // adding new element to location
+    section.appendChild(para);
+
+    // adding additioonal text to p tag without creating a new element
+    const text = document.createTextNode(' -- the premier source for web development.');
+    document.querySelector('p').appendChild(text);
+
+
+    // iterate through all paragraphs and add text to it.
+    const paragraph = document.querySelectorAll('p');
+    for (let i=0; i<paragraph.length; i++){
+        paragraph[i].appendChild(text);
+    }
+
+    document.querySelector('p:last-of-type').remove();
+
+    // selecting paragraph tag and changing style
+    // //long way
+    // const p = document.querySelector('p');
+    // p.style.color =  'white';
+    // p.style.backgroundColor = 'black';
+    // p.style.padding = '10px';
+    // p.style.width = '250px';
+    // p.style.textAlign = 'center';
+
+    // short way
+    // const p = document.querySelector('p');
+    // p.classList.add('highlight');
+
+    // console.log(window.innerHeight);
+    // console.log(window.innerWidth);
+
+    // const p = document.querySelector('p');
+    // // when mouse hovers over p element, change style
+    // p.onmouseover = function(){
+    //     p.classList.add('highlight');
+    // }
+    // // when mouse stops hovering over element go back to original style
+    // p.onmouseleave = function(){
+    //     p.classList.remove('highlight');
+    // }
+
+    const image = document.querySelector('img');
+    image.onclick = function(){
+        const para = document.createElement('p');
+        para.textContent = 'We hope you enjoyed the ride.';
+        section.appendChild(para);
+    }
+
+</script>
+
+<style>
+    .highlight{
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+    }
+</style>
+
+</html>

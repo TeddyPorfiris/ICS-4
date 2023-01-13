@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Standings</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="sports.css">
+
+    </head>
+
+    <body onload="displayTable()">
+
+        <nav class="navbar">
+            <div class="navbar-brand">
+              <a class="img" href="sports.html">
+                <img src="nfl.png">
+              </a>
+
+              <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          
+
+
+            <div class="navbar-menu" id="nav-links">
+              <div class="navbar-start">
+                <a class="navbar-item" href="games.html">
+                  Games
+                </a>
+          
+                <a class="navbar-item" href="admin.html">
+                  Add Game
+                </a>
+              </div>
+          
+            </div>
+        </nav>
+
+        
+        <section class="hero is-info mt-4">
+            <div class="hero-body">
+                <p class="title">
+                    Standings
+                </p>
+                <button class="button is-danger" onclick="showConf()">Conference</button>
+                <button class="button is-danger" onclick="showLeague()">League</button>
+            </div>
+        </section>
+
+        <section class="section">
+
+            <div class="conf-tables" style="display:block">
+                <h1 class="title">AFC</h1>
+                <table id="standingsAFC" class="table is-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th id="name" onclick="sortAll('AFC', 'city', 'nameAFC')">NAME</th>
+                            <th id="wins" onclick="sortAll('AFC', 'wins', 'winsAFC')">WINS</th>
+                            <th id="losses" onclick="sortAll('AFC', 'losses', 'lossesAFC')">LOSSES</th>
+                            <th id="ties" onclick="sortAll('AFC', 'ties', 'tiesAFC')">TIES</th>
+                            <th id="pct" onclick="sortAll('AFC', 'PCT', 'pctAFC')">PCT</th>
+                            <th id="conf" onclick="sortAll('AFC', 'conf', 'confAFC')">CONF</th>
+                            <th id="home" onclick="sortAll('AFC', 'homeRec', 'homeAFC')">HOME</th>
+                            <th id="road" onclick="sortAll('AFC', 'awayRec', 'awayAFC')">ROAD</th>
+                            <th id="streak" onclick="sortAll('AFC', 'streak', 'streakAFC')">STREAK</th>  
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+        
+                <h1 class="title">NFC</h1>
+                <table id="standingsNFC" class="table is-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th id="name" onclick="sortAll('NFC', 'city', 'nameNFC')">NAME</th>
+                            <th id="wins" onclick="sortAll('NFC', 'wins', 'winsNFC')">WINS</th>
+                            <th id="losses" onclick="sortAll('NFC', 'losses', 'lossesNFC')">LOSSES</th>
+                            <th id="ties" onclick="sortAll('NFC', 'ties', 'tiesNFC')">TIES</th>
+                            <th id="pct" onclick="sortAll('NFC', 'PCT', 'pctNFC')">PCT</th>
+                            <th id="conf" onclick="sortAll('NFC', 'conf', 'confNFC')">CONF</th>
+                            <th id="home" onclick="sortAll('NFC', 'homeRec', 'homeNFC')">HOME</th>
+                            <th id="road" onclick="sortAll('NFC', 'awayRec', 'awayNFC')">ROAD</th>
+                            <th id="streak" onclick="sortAll('NFC', 'streak', 'streakNFC')">STREAK</th>                            
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="league-table" style="display:none;">
+                <h1 class="title">League</h1>
+                <table id="standingsLeague" class="table is-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th id="name" onclick="sortAll('league', 'city', 'nameLeague')">NAME</th>
+                            <th id="wins" onclick="sortAll('league', 'wins', 'winsLeague')">WINS</th>
+                            <th id="losses" onclick="sortAll('league', 'losses', 'lossesLeague')">LOSSES</th>
+                            <th id="ties" onclick="sortAll('league', 'ties', 'tiesLeague')">TIES</th>
+                            <th id="pct" onclick="sortAll('league', 'PCT', 'pctLeague')">PCT</th>
+                            <th id="conf" onclick="sortAll('league', 'conf', 'confLeague')">CONF</th>
+                            <th id="home" onclick="sortAll('league', 'homeRec', 'homeLeague')">HOME</th>
+                            <th id="road" onclick="sortAll('league', 'awayRec', 'awayLeague')">ROAD</th>
+                            <th id="streak" onclick="sortAll('league', 'streak', 'streakLeague')">STREAK</th>                            
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer has-background-info has-text-white">
+            <div class="content has-text-centered">
+              <p>
+                <b>NFL Sports Application</b> by Teddy Porfiris   
+              </p>
+            </div>
+        </footer>
+
+    </body>
+    <script>
+
+        // let teamsAFC = [
+        //     {
+        //         "id": 1, 
+        //         "city": "Baltimore",
+        //         "nickname": "Ravens",
+        //         "fullName": "Baltimore Ravens",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": "0-0-0",
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": []
+        //     },
+        //     {
+        //         "id": 3, 
+        //         "city": "Denver",
+        //         "nickname": "Broncos",
+        //         "fullName": "Denver Broncos",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 4, 
+        //         "city": "Jacksonville",
+        //         "nickname": "Jaguars",
+        //         "fullName": "Jacksonville Jaguars",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 9,
+        //         "city": "Miami",
+        //         "nickname": "Dolphins",
+        //         "fullName": "Miami Dolphins",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 13,
+        //         "city": "Las Vegas",
+        //         "nickname": "Raiders",
+        //         "fullName": "Las Vegas Raiders",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 15,
+        //         "city": "New England",
+        //         "nickname": "Patriots",
+        //         "fullName": "New England Patriots",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 16,
+        //         "city": "New York",
+        //         "nickname": "Jets",
+        //         "fullName": "New York Jets",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 17,
+        //         "city": "Pittsburgh",
+        //         "nickname": "Steelers",
+        //         "fullName": "Pittsburgh Steelers",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 19,
+        //         "city": "Tennessee",
+        //         "nickname": "Titans",
+        //         "fullName": "Tennessee Titans",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 20,
+        //         "city": "Houston",
+        //         "nickname": "Texans",
+        //         "fullName": "Houston Texans",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 22,
+        //         "city": "Indianapolis",
+        //         "nickname": "Colts",
+        //         "fullName": "Indianapolis Colts",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 28,
+        //         "city": "Buffalo",
+        //         "nickname": "Bills",
+        //         "fullName": "Buffalo Bills",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 29,
+        //         "city": "Cincinnati",
+        //         "nickname": "Bengals",
+        //         "fullName": "Cincinnati Bengals",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 30,
+        //         "city": "Cleveland",
+        //         "nickname": "Browns",
+        //         "fullName": "Cleveland Browns",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": []
+        //     },
+        //     {
+        //         "id": 31,
+        //         "city": "Kansas City",
+        //         "nickname": "Chiefs",
+        //         "fullName": "Kansas City Chiefs",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 32,
+        //         "city": "Los Angeles",
+        //         "nickname": "Chargers",
+        //         "fullName": "Los Angeles Chargers",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     }
+        // ]
+
+
+        // let teamsNFC = [
+        //     {
+        //         "id": 18,
+        //         "city": "Philadelphia",
+        //         "nickname": "Eagles",
+        //         "fullName": "Philadelphia Eagles",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 12,
+        //         "city": "Minnesota",
+        //         "nickname": "Vikings",
+        //         "fullName": "Minnesota Vikings",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 26,
+        //         "city": "Seattle",
+        //         "nickname": "Seahawks",
+        //         "fullName": "Seattle Seahawks",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 6,
+        //         "city": "Atlanta",
+        //         "nickname": "Falcons",
+        //         "fullName": "Atlanta Falcons",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 8,
+        //         "city": "Dallas",
+        //         "nickname": "Cowboys",
+        //         "fullName": "Dallas Cowboys",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 25,
+        //         "city": "New York",
+        //         "nickname": "Giants",
+        //         "fullName": "New York Giants",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 23,
+        //         "city": "San Fransisco",
+        //         "nickname": "49ers",
+        //         "fullName": "San Fransisco 49ers",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 21,
+        //         "city": "Washington",
+        //         "nickname": "Commanders",
+        //         "fullName": "Washington Commanders",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 24,
+        //         "city": "Los Angeles",
+        //         "nickname": "Rams",
+        //         "fullName": "Los Angeles Rams",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 2, 
+        //         "city": "Tampa Bay",
+        //         "nickname": "Buccaneers",
+        //         "fullName": "Tampa Bay Buccaneers",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 27,
+        //         "city": "Green Bay",
+        //         "nickname": "Packers",
+        //         "fullName": "Green Bay Packers",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 11,
+        //         "city": "Arizona",
+        //         "nickname": "Cardinals",
+        //         "fullName": "Arizona Cardinals",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 14,
+        //         "city": "New Orleans",
+        //         "nickname": "Saints",
+        //         "fullName": "New Orleans Saints",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 7,
+        //         "city": "Chicago",
+        //         "nickname": "Bears",
+        //         "fullName": "Chicago Bears",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 5,
+        //         "city": "Carolina",
+        //         "nickname": "Panthers",
+        //         "fullName": "Carolina Panthers",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     },
+        //     {
+        //         "id": 10,
+        //         "city": "Detroit",
+        //         "nickname": "Lions",
+        //         "fullName": "Detroit Lions",
+        //         "wins": 0,
+        //         "losses": 0,
+        //         "ties": 0,
+        //         "PCT": 0,
+        //         "conf": '0-0-0',
+        //         "homeRec": "0-0-0",
+        //         "awayRec": "0-0-0",
+        //         "streak": 0,
+        //         "games": [] 
+        //     }
+        // ]
+
+        // let gamesArray = [];
+        
+        // //adds team data to local storage
+        // localStorage.setItem('teamsAFC', JSON.stringify(teamsAFC));
+        // localStorage.setItem('teamsNFC', JSON.stringify(teamsNFC));
+
+        // localStorage.setItem('gamesArray', JSON.stringify(gamesArray));
+
+
+        displayTable()
+
+        //GET TEAM DATA
+        function getTeams(conf) {
+            if (conf === 'AFC')
+                return JSON.parse(localStorage['teamsAFC']);
+            else if (conf === 'NFC')
+                return JSON.parse(localStorage['teamsNFC']);
+            else
+                return JSON.parse(localStorage['teamsAFC']).concat(JSON.parse(localStorage['teamsNFC']));
+        }
+        
+
+        //CREATES TABLE
+        function displayTable(){
+            createTable(getTeams('AFC'), 'AFC');
+            createTable(getTeams('NFC'), 'NFC');
+            createTable(getTeams('league'), 'league');
+        }
+        
+
+        //creates table data
+        function createTable(teams, conf){
+            //gets table body
+            let tableBody;
+            if (conf == 'AFC')
+                tableBody = document.querySelector('#standingsAFC tbody');
+            else if (conf == 'NFC')
+                tableBody = document.querySelector('#standingsNFC tbody');
+            else
+                tableBody = document.querySelector('#standingsLeague tbody');
+
+            //clears current table data
+            tableBody.replaceChildren();
+
+            //iterates through each team, creating a new row in the table per team with all the team datas
+            teams.forEach((team) => {
+
+                const row = document.createElement('tr');
+
+                addTableData(team, 'city', row);
+                addTableData(team, 'wins', row);
+                addTableData(team, 'losses', row);
+                addTableData(team, 'ties', row);
+                addTableData(team, 'PCT', row);
+                addTableData(team, 'conf', row);
+                addTableData(team, 'homeRec', row);
+                addTableData(team, 'awayRec', row);
+                addTableData(team, 'streak', row);
+
+                //adding row to table body
+                tableBody.appendChild(row);
+
+            });
+
+        }
+
+        //adds team data to row
+        function addTableData(team, key, row){
+            //adding team data to team row
+            let td = document.createElement('td');
+            if (key === "city"){
+                //making team names links so user to access individual team pages
+                let teamLink = document.createElement('a');
+                teamLink.textContent = team.city + " " + team.nickname;
+                //setting the specific URL of each team name link so when clicked, the URL will have the specific ID of the team
+                teamLink.setAttribute('href', 'team.html?id='+team.id);
+                //adding "a" element within td element
+                td.appendChild(teamLink);
+                td.setAttribute('id', 'name');
+            }else if (key === "wins"){
+                td.textContent = team.wins;
+                td.setAttribute('id', 'wins');
+            }else if (key === "losses"){
+                td.textContent = team.losses;
+                td.setAttribute('id', 'losses');
+            }else if (key === "ties"){
+                td.textContent = team.ties;
+                td.setAttribute('id', 'ties');
+            }else if (key === "PCT"){
+                td.textContent = team.PCT;
+                td.setAttribute('id', 'pct');
+            }else if (key === "conf"){
+                td.textContent = team.conf;
+                td.setAttribute('id', 'conf');
+            }else if (key === "homeRec"){
+                td.textContent = team.homeRec;
+                td.setAttribute('id', 'home');
+            }else if (key === "awayRec"){
+                td.textContent = team.awayRec;
+                td.setAttribute('id', 'road');
+            }else if (key === "streak"){
+                td.textContent = team.streak;
+                td.setAttribute('id', 'streak');
+            }
+            row.appendChild(td);
+        }
+
+
+
+        //LISTENING FOR CHANGES IN LOCAL STORAGE (TEAMS DATA UPDATES)
+        window.addEventListener("storage", function () {
+            createTable(getTeams('AFC'), 'AFC');
+            createTable(getTeams('NFC'), 'NFC');  
+            createTable(getTeams('league'), 'league');              
+        }, false);
+
+
+
+
+        //SORTING TABLE COLUMNS
+        
+        //if sortedOrder is false, sort alphabetical order/order greatest to least. if true, sort reverse alphabetical/least to greatest
+
+        let sortOrderObject = {
+            'nameAFC': false,
+            'nameNFC': false,
+            'winsAFC' : false,
+            'winsNFC' : false,
+            'lossesAFC': false,
+            'lossesNFC': false,
+            'tiesAFC': false,
+            'tiesNFC': false,
+            'pctAFC': false,
+            'pctNFC': false,
+            'confAFC': false,
+            'confNFC': false,
+            'homeAFC': false,
+            'homeNFC': false,
+            'awayAFC': false,
+            'awayNFC': false,
+            'streakAFC': false,
+            'streakNFC': false
+
+        }
+
+
+        function sortAll(conf, sortType, sortOrder){
+            let teams;
+            
+            //getting data of teams in specified conference
+            if (conf == 'AFC')
+                teams = getTeams('AFC');
+            else if (conf == 'NFC')
+                teams = getTeams('NFC');
+            else
+                teams = getTeams('league');
+
+            let sortedTeams;
+
+            //sort greatest to least/alphabetical order if sortOrder value is false
+            if (!sortOrderObject[sortOrder]){
+                //because of the x-x-x format of the records, through the sort method, we filter them by the first x value (wins) and we get that value by getting the characters before the first - using substr
+                if (sortType == "conf" || sortType == "homeRec" || sortType == "awayRec") 
+                    sortedTeams = teams.sort((teamA, teamB) => {return (parseInt(teamA[sortType].substr(0, teamA.conf.indexOf('-'))) > parseInt(teamB[sortType].substr(0, teamB.conf.indexOf('-'))))? -1 : 1});
+                //through the sort method, we filter the numerical values from greatest to least
+                else 
+                    sortedTeams = teams.sort((teamA, teamB) => {return (teamA[sortType] > teamB[sortType])? -1 : 1});
+                //now that the values have been sorted from greatest to least, sortOrder is set to true so next time the function is called it sorts from least to greatest
+                sortOrderObject[sortOrder] = true;  
+
+            }else{ //sort least to greatest/reverse alphabetical order if sortOrder value is true
+                if (sortType == "conf" || sortType == "homeRec" || sortType == "awayRec")
+                    sortedTeams = teams.sort((teamA, teamB) => {return (parseInt(teamA[sortType].substr(0, teamA.conf.indexOf('-'))) < parseInt(teamB[sortType].substr(0, teamB.conf.indexOf('-'))))? -1 : 1});
+                else    
+                    sortedTeams = teams.sort((teamA, teamB) => {return (teamA[sortType] < teamB[sortType])? -1 : 1})
+                
+                sortOrderObject[sortOrder] = false;                
+            }
+
+            createTable(sortedTeams, conf); //recreating table with updated order from sorting
+            
+        }
+
+        //when 'conference' button clicked don't display league table and display conf tables 
+        function showConf(){
+            //don't display league table
+            document.querySelector('.league-table').style.display = 'none';
+            //display conf tables
+            document.querySelector('.conf-tables').style.display = 'block';
+        }
+
+        //when 'league' button clicked don't display conf tables and display league table
+        function showLeague(){
+            //don't display conf tables
+            document.querySelector('.conf-tables').style.display = 'none';
+            //display league table
+            document.querySelector('.league-table').style.display = 'block';
+        }
+
+
+        //hamburger menu toggle
+        const burgerIcon = document.querySelector('#burger');
+        const navbarMenu = document.querySelector('#nav-links');
+
+        //if the hamburger menu is clicked, add the class to the nav bar menu element 'is-active' to display menu items. when clicked again hide menu items
+        burgerIcon.addEventListener('click', () => {
+            navbarMenu.classList.toggle('is-active');
+        });
+
+
+
+        
+    </script>
+
+</html>

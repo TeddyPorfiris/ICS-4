@@ -1,0 +1,189 @@
+/* GLOBAL */
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;  
+}
+
+
+body{
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+}
+
+
+/* making page layout grid */
+.container{
+    display: grid;
+    /* one column */
+    grid-template-columns: 1fr;
+    /* 11 rows with different heights*/
+    grid-template-rows: 50px 100px 300px 100px 300px 300px 300px 300px 300px 300px 100px;
+}
+
+
+.item{
+    /* border: solid 1px black; */
+    /* making each item flex to center content in grid container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+/* making checked stars orange for product rating */
+.checked {
+    color: #FF9551;
+}
+
+/* LOCAL */
+
+/* JOHN'S STORY/REVIEWS HEADER */
+.item:nth-of-type(2) h1, .item:nth-of-type(4) h1{
+    color: black;
+    font-size: 35px;
+    font-family: 'Bungee Shade', sans-serif;
+}
+
+/* centering headers */
+.item:nth-of-type(2), .item:nth-of-type(4){
+    text-align: center;
+    background-color: #6FEDD6;
+}
+
+
+/* JOHN'S EXPERIENCE CONTENT */
+/* background color */
+.item:nth-of-type(3){
+    background-color: #B9FFF8;
+}
+
+/* adding padding all around to quote  */
+.item:nth-of-type(3) .john-quote{
+    padding: 70px;
+}
+
+/* centering text */
+.item:nth-of-type(3) h1{
+    text-align: center;
+
+}
+.item:nth-of-type(3) .quote{
+    /* sizing and centering text */
+    font-size: 25px;
+    text-align: center;
+    /* italics */
+    font-style: italic;
+}
+
+.item:nth-of-type(3) .name{
+    /* sizing and centering text */
+    font-size: 20px;
+    text-align: center;
+    /* boldens text */
+    font-weight: bold;
+}
+
+
+/* REVIEWS */
+/* coloring backgrounds */
+.item:nth-of-type(5), .item:nth-of-type(6), .item:nth-of-type(7), .item:nth-of-type(8), .item:nth-of-type(9), .item:nth-of-type(10){
+    background-color: #e3e3e3;
+}
+
+/* white review box container */
+.review-container{
+    /* box where review content is in */
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    /* making box corners rounded */
+    border-radius: 50px;
+    /* using flex to center review content */
+    display: flex;
+    /* chaning flex direction to center content over each other */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* shadow when review is hovered over */
+.review-container:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* adding more space around review content */
+.review-content{
+    padding: 50px;
+}
+
+
+
+/* FOOTER */
+/* text */
+.item:nth-of-type(11) h1{
+    font-family: 'Bungee Shade', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+}
+
+
+.item:nth-of-type(11){
+    background-color: #FF4A4A;
+}
+
+/*formatting container containing all img icons */
+.item:nth-of-type(11) .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* img icons */
+.item:nth-of-type(11) a, .item:nth-of-type(11) img{
+    width: 25px;
+    height: auto;
+    margin: 5px 5px 0;
+}
+
+@media(max-width: 710px){
+    /* sizing grid containers */
+    .container{
+        grid-template-rows: 50px 100px 450px 100px 350px 350px 350px 350px 350px 350px   100px;
+    }
+}
+
+@media(max-width: 450px){
+    /* sizing grid containers */
+    .container{
+        grid-template-rows: 50px 100px 620px 100px 500px 500px 500px 500px 500px 500px 100px;
+    }
+
+    /* decreasing size of JOHN'S EXPERIENCE and CUSTOMER REVIEWS text */
+    .item:nth-of-type(2) h1, .item:nth-of-type(4) h1{
+        font-size: 20px;
+    }
+}
+
+
+@media(max-width: 360px){
+    /* sizing grid containers */
+    .container{
+        grid-template-rows: 50px 100px 750px 100px 550px 550px 550px 550px 550px 550px 100px;
+    }   
+}
+
+@media(max-width: 332px){
+    /* sizing grid containers */
+    .container{
+        grid-template-rows: 50px 100px 1000px 100px 600px 600px 600px 600px 600px 600px 100px;
+    }   
+    /* decreasing footer text size */
+    .item:nth-of-type(11) h1{
+        font-size: 20px;
+    }
+}

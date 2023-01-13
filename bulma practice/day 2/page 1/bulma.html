@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+
+  </head>
+  <body>
+
+    <!-- nav bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+
+        <title class="navbar-item has-text-black has-text-weight-light">
+            Bulma Admin
+        </title>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start has-text-weight-bold">
+
+            <a class="navbar-item has-text-black">
+            Home
+            </a>
+    
+            <a class="navbar-item has-text-black">
+            Orders
+            </a>
+    
+            <a class="navbar-item has-text-black">
+                Payments
+            </a>
+        
+            <a class="navbar-item has-text-black">
+                Exceptions
+            </a>
+
+            <a class="navbar-item has-text-black">
+                Reports
+            </a>
+
+    
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- content in grey area -->
+    <div class="columns has-background-white-ter">
+        <!-- left side bar -->
+        <div class="column is-3">
+            
+            <section class="section">     
+            <aside class="menu">
+                <p class="menu-label">
+                General
+                </p>
+                <ul class="menu-list has-text-weight-bold">
+                <li><a class="has-text-black">Dashboard</a></li>
+                <li><a class="has-text-black">Customers</a></li>
+                </ul>
+                <p class="menu-label">
+                Administration
+                </p>
+                <ul class="menu-list has-text-weight-bold">
+                <li><a class="has-text-black">Team Settings</a></li>
+                <li>
+                    <a class="has-text-black">Manage Your Team</a>
+                    <ul>
+                    <li><a class="has-text-black">Members</a></li>
+                    <li><a class="has-text-black">Plugins</a></li>
+                    <li><a class="has-text-black">Add a member</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-text-black">Invitations</a></li>
+                <li><a class="has-text-black">Cloud Storage Environment Settings</a></li>
+                <li><a class="has-text-black">Authentication</a></li>
+                </ul>
+                <p class="menu-label">
+                Transactions
+                </p>
+                <ul class="menu-list has-text-weight-bold">
+                <li><a class="has-text-black">Payments</a></li>
+                <li><a class="has-text-black">Transfers</a></li>
+                <li><a class="has-text-black">Balance</a></li>
+                </ul>
+            </aside>
+        </section>     
+        
+            
+        </div>
+
+        <!-- right side bar -->
+        <div class="column">
+            
+            <section class="section">
+
+                <!-- breadcrumbs  -->
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="#">Bulma</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Admin</a></li>
+                    </ul>
+                    </nav>
+
+                <!-- hero -->
+                <section class="hero is-small is-info is-bold">
+                    <div class="hero-body">
+                    <p class="title">
+                        Hello, Admin.
+                    </p>
+                    <p class="subtitle">
+                        I hope you're having a great day!
+                    </p>
+                    </div>
+                </section>
+
+                <!-- Tiles for strip of metrics -->
+                <div class="tiles mt-3">
+                    <!-- centering text -->
+                    <div class="tile is-ancestor has-text-centered">
+                        
+                        <div class="tile is-parent">
+                            <div class="tile is-child">
+                                <div class="box">
+                                    <p class="title">439k</p>
+                                    <p class="subtitle is-6">Users</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child">
+                                <div class="box">
+                                    <p class="title">59k</p>
+                                    <p class="subtitle is-6">Products</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child">
+                                <div class="box">
+                                    <p class="title">3.4k</p>
+                                    <p class="subtitle is-6">Open Orders</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child">
+                                <div class="box">
+                                    <p class="title">19</p>
+                                    <p class="subtitle is-6">Exceptions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- events/searches -->
+                <div class="tile is-ancestor">
+                    <!-- events -->
+                    <div class="tile is-6">
+                        <div class="tile is-parent">
+                            <div class="tile is-child">
+                                <div class="content">
+                                    <div class="card">
+                                        <header class="card-header">
+                                        <p class="card-header-title has-text-weight-normal">
+                                        Events
+                                        </p>
+                                        <button class="card-header-icon" aria-label="more options">
+                                            <span class="icon">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                            </span>
+                                        </button>
+                                        </header>
+        
+                                        <div class="card-table">
+                                            <div class="content">
+                                                <table class="table is-striped is-fullwidth">
+                                                    <tbody>
+                                                        <!-- table row -->
+                                                        <tr>
+                                                            <td><i class="fa-solid fa-bell"></i></td>
+                                                            <td>Lorem ipsum dolor sits</td>
+                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                        </tr> 
+                                                        <tr>
+                                                            <td><i class="fa-solid fa-bell"></i></td>
+                                                            <td>Lorem ipsum dolor sits</td>
+                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                        </tr> 
+                                                        <tr>
+                                                            <td><i class="fa-solid fa-bell"></i></td>
+                                                            <td>Lorem ipsum dolor sits</td>
+                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                        </tr> 
+                                                        <tr>
+                                                            <td><i class="fa-solid fa-bell"></i></td>
+                                                            <td>Lorem ipsum dolor sits</td>
+                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                        </tr> 
+                                                        <tr>
+                                                            <td><i class="fa-solid fa-bell"></i></td>
+                                                            <td>Lorem ipsum dolor sits</td>
+                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                        </tr> 
+                                                        
+                                                    </tbody>
+                                                </table>
+        
+                                            </div>
+                                        </div>
+        
+                                        
+                                        <footer class="card-footer">
+                                            <a href="#" class="card-footer-item">View All</a>
+        
+        
+                                        </footer>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- searches -->
+                    <div class="tile is-vertical is-6">
+                        <div class="tile is-parent is-vertical">
+                            <div class="tile is-child">
+                                <div class="card">
+                                    <header class="card-header">
+                                    <p class="card-header-title has-text-weight-normal">
+                                    Inventory Search
+                                    </p>
+                                    <button class="card-header-icon" aria-label="more options">
+                                        <span class="icon">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                    </header>
+    
+                                    <div class="card-content">
+                                        <div class="control has-icons-left has-icons-right">
+                                            <input class="input is-medium" type="text">
+                                            <span class="icon is-left">
+                                            <i class="fas fa-search"></i>
+                                            </span>
+                                            <span class="icon is-right">
+                                            <i class="fas fa-check"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile is-child">
+                                <div class="card">
+                                    <header class="card-header">
+                                    <p class="card-header-title has-text-weight-normal">
+                                    User Search
+                                    </p>
+                                    <button class="card-header-icon" aria-label="more options">
+                                        <span class="icon">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                    </header>
+    
+                                    <div class="card-content">
+                                        <div class="control has-icons-left has-icons-right">
+                                            <input class="input is-medium" type="text">
+                                            <span class="icon is-left">
+                                            <i class="fas fa-search"></i>
+                                            </span>
+                                            <span class="icon is-right">
+                                            <i class="fas fa-check"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                           
+                
+            </section>
+
+        </div>
+    </div>
+
+
+  </body>
+</html>
+

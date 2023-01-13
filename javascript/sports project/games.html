@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="nav.css">
+    <title>Games</title>
+</head>
+<body onload="bodyOnload()">
+
+    <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="img" href="sports.html">
+            <img src="nfl.png">
+          </a>
+
+          <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      
+
+
+        <div class="navbar-menu" id="nav-links">
+          <div class="navbar-start">
+            <a class="navbar-item" href="games.html">
+              Games
+            </a>
+      
+            <a class="navbar-item" href="admin.html">
+              Add Game
+            </a>
+          </div>
+      
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <p class="title">From</p>
+                    <input class="input" type="date" id="date1" onblur="fromDateMin()">
+                    
+                    <p class="title mt-4">To</p>
+                    <input class="input" type="date" id="date2" onblur="toDateMax()">
+                    <button class="button mt-5 is-fullwidth" onclick="createTiles(1)">Submit</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination" id>
+        <ul class="pagination-list" id="paginationUl">
+        </ul>
+    </nav>
+
+    <section id="tileSection" class="section">
+
+    </section>
+
+    <footer class="footer has-background-info has-text-white">
+        <div class="content has-text-centered">
+          <p>
+            <b>NFL Sports Application</b> by Teddy Porfiris   
+          </p>
+        </div>
+    </footer>
+
+
+
+</body>
+<script>
+
+    //amount of games per page
+    const numGamesPerPage = 8;
+
+    function bodyOnload(){
+        todayDate();
+        createTiles(1);
+    }
+    
+    //gets array of games played
+    function getGames() {
+        return JSON.parse(localStorage['gamesArray']);
+    }
+    
+
+    //LISTENING FOR CHANGES IN LOCAL STORAGE (GAMES UPDATES)
+    window.addEventListener("storage", function () {
+        createTiles(1);
+    }, false);
+
+
+
+
+
+    function createTiles(currPage){
+        //clearing all previous tiles displayed every time method is called so no duplicate games are showed
+        document.querySelector('#tileSection').replaceChildren();
+
+        //getting array of all games
+        let masterGames = getGames();
+        //start index of games
+        let startIndex = (currPage-1)*numGamesPerPage;
+        
+        let numTilesInRow = 0;
+        let numTilesTotal = 0;
+
+        let date1 = document.querySelector('#date1').value;
+        let date2 = document.querySelector('#date2').value;
+
+        //filtering games for date start and end
+        games = masterGames.filter((game)=>{return checkDate(date1, date2, game.date)}).slice(startIndex,startIndex+numGamesPerPage);
+
+        //for each game, create a tile
+        games.forEach(game => {
+            //displaying tile only if its date falls within range of dates set by user
+            if (checkDate(date1, date2, game.date)){                   
+
+                //if adding another tile to the row will make the amount of tiles in the row greater than 4, set numTilesInRow to 0 so a new row will be created
+                if (numTilesInRow > 3)
+                    numTilesInRow = 0;
+        
+                //if numTilesInRow is 0, create a new row element
+                if (numTilesInRow == 0){
+                    tileDisplay = document.createElement('div');
+                    tileDisplay.classList.add('tile')
+                    tileDisplay.classList.add('is-ancestor')
+                    rowObject['row'] = tileDisplay
+                    tileSection.append(tileDisplay);
+                    //set the number of tiles back to zero in that row
+                }
+
+                //create tile parent element
+                const tileParent = document.createElement('div');
+                tileParent.classList.add('tile'); 
+                tileParent.classList.add('is-3')
+                tileParent.classList.add('is-parent');
+
+                //create tile child element
+                const tileChild = document.createElement('div');
+                tileChild.classList.add('tile');
+                tileChild.classList.add('is-child')
+                tileChild.classList.add('box')
+
+                //create tile header within child element
+                //header will be date of game
+                const tileHeader = document.createElement('p');
+                tileHeader.classList.add('title');
+                tileHeader.textContent = game.date;
+                
+
+                //home team score
+                
+                //create tile content element within child element. It is an "a" element that when clicked takes you to team's games page
+                const homeData = document.createElement('a');
+                let homeID = getID(game.homeTeam);
+                homeData.setAttribute('href', 'team.html?id='+homeID);
+
+                //away team score
+                const awayData = document.createElement('a');
+                let awayID = getID(game.awayTeam);
+                awayData.setAttribute('href', 'team.html?id='+awayID);
+
+                //I want to make the winning team bold so I create new Strings to use the bold() method
+                const homeScore = new String(game.homeTeam + ' (home) - ' + game.homeScore);
+                const awayScore = new String(game.awayTeam + ' (away) - ' + game.awayScore);
+
+                //if the home team's score is larger than the away teams, bold the home team string
+                if (game.homeScore > game.awayScore){
+                    homeData.innerHTML = homeScore.bold();
+                    awayData.textContent = `${game.awayTeam} (away) - ${game.awayScore}`;
+                //if the away team's score is larger than the home teams, bold the away team string
+                }else if (game.homeScore < game.awayScore){
+                    homeData.textContent = `${game.homeTeam} (home) - ${game.homeScore}`;
+                    awayData.innerHTML = awayScore.bold();
+                }
+
+                //creating p elements to put "a" elements in for better formatting
+                const homeDataPElement = document.createElement('p')
+                const awayDataPElement = document.createElement('p')
+                
+
+                //adding header element tile child element
+                tileChild.append(tileHeader);
+
+                //adding "a" element with team score data to p element
+                homeDataPElement.append(homeData);
+                awayDataPElement.append(awayData);
+
+                //adding p elements to tile child element
+                tileChild.append(homeDataPElement);
+                tileChild.append(awayDataPElement);
+
+                //adding tile child element to tile parent element
+                tileParent.append(tileChild);
+                //adding tile parent element to div element where tiles are contained
+                rowObject['row'].append(tileParent);
+
+                //increase count of number of tiles in row
+                numTilesInRow++;
+                numTilesTotal++;
+            }
+        });
+
+        //passing in necessary amount of games based off dates to create pagination lables
+        pageLabels(masterGames.filter((game)=>{return checkDate(date1, date2, game.date)}).length);
+    }
+
+    //checking if game date falls within range
+    function checkDate(dateFrom, dateTo, gameDate){
+        //using regex to check if any of the dates from the input fields or from the game contain letters, indicating that it is an improper date (ex. yyyy-09-02)
+        //also checking if the dates are blank
+        //if the dates are all valid and not blank, check to see if the game date falls within the range of dates set by the user
+        let lettersRegEx = /[a-zA-Z]/g;
+        if (!lettersRegEx.test(dateFrom) && !lettersRegEx.test(dateTo) && !lettersRegEx.test(gameDate) && dateFrom.length != 0 && dateTo.length != 0 && gameDate.length != 0){
+            //create new Dates to be able to check if a date falls within a range
+            let date1 = new Date(dateFrom);
+            let date2 = new Date(dateTo);
+            let checkDate = new Date(gameDate);
+            //check if the game date falls within the range of dates
+            return (checkDate >= date1 && checkDate <= date2)
+        //if any of the dates are invalid or blank, return true and display the tile
+        }else
+            return true;
+
+    }
+
+
+    let rowObject = {
+        'row': document.querySelector('#tileDisplay')
+    }
+
+    //get team's id
+    function getID(teamName){
+
+        let teamsAFC = JSON.parse(localStorage['teamsAFC']);
+        let teamsNFC = JSON.parse(localStorage['teamsNFC']);
+
+        //getting team from its name
+        //checking if team is in afc JSON and if not then in NFC
+        let team = teamsAFC.filter(team => team.fullName == teamName);
+        if (team.length == 0)
+            team = teamsNFC.filter(team => team.fullName == teamName);
+
+        //returning team's id
+        return team[0].id;
+        
+    }
+
+
+    //form validation on date input. Cannot input score of future date.
+    function todayDate(){
+        //creating new Date and getting today's date
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+        //formatting date
+        today = yyyy + '-' + mm + '-' + dd;
+
+        //setting max date attribute of date input element to today's date
+        let dateInput1 = document.querySelector('#date1');
+        dateInput1.setAttribute('max', today);
+
+       
+        let dateInput2 = document.querySelector('#date2');
+        dateInput2.setAttribute('max', today);
+    }
+
+    function fromDateMin(){
+        let dateInputFrom = document.querySelector('#date1').value;
+        let dateInputTo = document.querySelector('#date2');
+        dateInputTo.setAttribute('min', dateInputFrom);
+    }
+
+    function toDateMax(){
+        let dateInputFrom = document.querySelector('#date1');
+        let dateInputTo = document.querySelector('#date2').value;
+        dateInputFrom.setAttribute('max', dateInputTo);
+    }
+
+
+    //creating pageanation buttons
+    function pageLabels(numGames){
+        let numPages = Math.ceil(numGames/numGamesPerPage);
+        let paginationUl = document.querySelector("#paginationUl")
+        paginationUl.replaceChildren();
+        if (numGames > numGamesPerPage){
+
+
+            //create and display previous button before page number buttons are added
+            //previous element li
+            let prevLi = document.createElement('li');
+            //previous a element
+            let aElementPrev = document.createElement('a');
+            aElementPrev.classList.add('pagination-previous');
+            aElementPrev.textContent = '<';
+
+            aElementPrev.onclick = ()=> arrowMove('backwards');
+
+            //adding "a" element to li element
+            prevLi.append(aElementPrev);
+
+            //adding li element to pagination ul element   
+            paginationUl.append(prevLi);
+            
+                
+
+            for (let i = 0; i < numPages; i++) {  
+
+                //creating page button, setting its text content based off of page number, and creating onclick event so when button is clicked that page's tiles are shown
+                let pageButtonLi = document.createElement('li');
+                let pageButton = document.createElement('a');
+                pageButton.classList.add('pagination-link');
+                let pageNum = i+1;
+                pageButton.setAttribute('id', 'label'+pageNum)
+                pageButton.textContent = pageNum;
+                pageButton.onclick = ()=> createTiles(i+1)
+                //adding page number "a" element to li element
+                pageButtonLi.append(pageButton);
+
+                //adding page number li element to pagination ul element   
+                paginationUl.append(pageButtonLi);   
+                
+                
+            }
+
+            //create and display next page button after page number buttons are added
+            //next element li
+            let nextLi = document.createElement('li');
+            //next a element
+            let aElementNext = document.createElement('a');
+            aElementNext.classList.add('pagination-next');
+            aElementNext.textContent = '>';
+
+            aElementNext.onclick = ()=> arrowMove('forward')
+            
+            nextLi.append(aElementNext);
+            paginationUl.append(nextLi);
+
+            //setting selector highlight to be on first page label at first
+            document.querySelector('#label1').classList.add('is-current')
+            
+        }
+
+        //listens for clicks on any page buttons
+        labelsArray = document.querySelectorAll(".pagination-link");
+        labelsArray.forEach(function(label) {
+            label.addEventListener("click", function() {
+                //if page button clicked, make that one selected
+                let buttonID = label.id;
+                selectPage(buttonID)    
+            });
+        });
+        
+    }
+
+    
+    //highlighting button by adding class name
+    function selectPage(id){
+        //selected highlight starts on first page. when button is clicked remove that highlight
+        document.querySelector('#label1').setAttribute('class', 'pagination-link')
+        //set highlight to button that was clicked
+        let pageLabel = document.querySelector('#'+id);
+        pageLabel.classList.add('is-current')
+    }
+
+
+
+    function arrowMove(direction){
+        //getting the page number of selected page
+        let selectedPage = document.querySelector('.pagination-link.is-current');
+        let selectedPageNumber = parseInt(selectedPage.textContent);
+        let newPageNumber = selectedPageNumber;
+
+        //if user clicks forward button
+        if (direction == 'forward'){
+
+            //number of pages (number of child elements in page labels ul minus 2 (the forward and backward buttons))
+            let numLabels = document.querySelector('#paginationUl').childElementCount - 2;
+            //if user is not on last page, display tiles of next page
+            if (selectedPageNumber < numLabels){
+                newPageNumber = selectedPageNumber+1;   
+                createTiles(newPageNumber);
+        
+            //if user is on last page, continue to display tiles of last page
+            }else
+                createTiles(selectedPageNumber)
+            
+        //if user clicks backwards button
+        }else{
+            //if user is not on page 1, display tiles of previous page
+            if (selectedPageNumber > 1){
+                newPageNumber = selectedPageNumber-1;   
+                createTiles(newPageNumber);
+        
+            //if user is on page 1, continue to display tiles of first page
+            }else
+                createTiles(selectedPageNumber);            
+        }
+
+        //highlight previous page label
+        selectPage('label'+newPageNumber)
+    }
+
+    //hamburger menu toggle
+    const burgerIcon = document.querySelector('#burger');
+    const navbarMenu = document.querySelector('#nav-links');
+
+    //if the hamburger menu is clicked, add the class to the nav bar menu element 'is-active' to display menu items. when clicked again hide menu items
+    burgerIcon.addEventListener('click', () => {
+        navbarMenu.classList.toggle('is-active');
+    });
+
+
+
+
+</script>
+</html>

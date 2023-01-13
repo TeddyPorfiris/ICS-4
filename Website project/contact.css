@@ -1,0 +1,256 @@
+/* GLOBAL */
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;  
+}
+
+
+body{
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+}
+
+
+/* making page layout grid */
+.container{
+    display: grid;
+    /* two columns */
+    grid-template-columns: 1fr 1fr;
+    /* 7 rows with different heights*/
+    grid-template-rows: 50px 100px 450px 200px 150px 450px 100px;
+}
+
+/* extends item accross columns  */
+.item:nth-of-type(1),.item:nth-of-type(2), .item:nth-of-type(3), .item:nth-of-type(4), .item:nth-of-type(5), .item:nth-of-type(8){
+    grid-column: 1/4;
+} 
+
+
+
+.item{
+    /* border: solid 1px black; */
+    /* making each item flex to center content in grid container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+/* LOCAL */
+
+/* CONTACT US/NO RESPONSE/AWARD WINNING SERVICE/AWARD TITLES HEADER */
+
+/* centering all text */
+.item:nth-of-type(2) h1, .item:nth-of-type(2) p, .item:nth-of-type(4) h1, .item:nth-of-type(4) p, .item:nth-of-type(5) h1, .item:nth-of-type(6) h1, .item:nth-of-type(6) p, .item:nth-of-type(7) h1, .item:nth-of-type(7) p{
+    text-align: center;
+    padding: 0 50px 0;
+}
+
+/* changing font and increasing size of h1 text */
+.item:nth-of-type(2) h1, .item:nth-of-type(4) h1, .item:nth-of-type(5) h1{
+    font-family: 'Bungee Shade', sans-serif;
+    font-size: 40px;
+}
+
+/* changing background color */
+.item:nth-of-type(2), .item:nth-of-type(4){
+    background-color: #6FEDD6;
+}
+.item:nth-of-type(5){
+    background-color: #B9FFF8;
+}
+
+
+/* CONTACT FORM */
+/* chaning background color */
+.item:nth-of-type(3){
+    background-color: #FF9551;
+}
+/* formatting contact form area */
+.contact { 
+    /* sizing contact form area */
+    width: 100%;
+    /* centering contact form area  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* color of form and adding padding to add spaces between content */
+.contact-form {
+    background: #FF4A4A;
+    width: 80%;
+    padding: 40px 40px 40px;
+    border-radius: 10px;
+}
+
+
+.contact-form .row {
+    /* making each form row flex to properly position them */
+    width: 100%;
+    display: flex;
+}
+
+.contact-form .email-subject-form {
+    /* width of first name/last name/email/subject forms */
+    width: 50%;
+    /* adding margin to above forms to properly space them */
+    margin: 0 10px;
+}
+
+.contact-form .message-form {
+    /* width of message form */
+    width: 100%;
+    /* adding margin to above form to properly space it */
+    margin: 0 10px;
+}
+
+.contact-form .row input,
+.contact-form .row textarea {
+    /* colored border*/
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* rounded corners for forms */
+    border-radius: 10px;
+    /* width of forms */
+    width: 100%;
+    /* padding within each form */
+    padding: 10px;
+    /* no outline on form when form is selected */
+    outline: none;
+    /* setting font size*/
+    font-size: 16px;
+    /* margin between forms */
+    margin: 10px 0;
+    /* cannot resize textarea message form */
+    resize: none;
+}
+
+/* height of message form */
+.contact-form .row textarea {
+    height: 150px;
+}
+
+/* styling submit button */
+.contact-form .row input[type='submit'] {
+    background-color: white;
+    color: gray;
+    margin: 0;
+    /* all text is uppercase */
+    text-transform: uppercase;
+    /* spacing letters and adding font weight */
+    letter-spacing: 2px;
+    font-weight: 300;
+    /* border: 0; */
+    cursor: pointer;
+}
+
+/* AWARD WINNING CUSTOMER SERVICE AWARDS */
+
+/* AWARD */
+
+.award{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* sizing img */
+.award img{
+    width: 200px;
+}
+
+
+.award p{
+    padding: 0 60px 0;
+}
+
+
+
+/* FOOTER */
+/* text */
+.item:nth-of-type(8) h1{
+    font-family: 'Bungee Shade', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+}
+
+
+.item:nth-of-type(8){
+    background-color: #FF4A4A;
+}
+
+/*formatting container containing all img icons */
+.item:nth-of-type(8) .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* img icons */
+.item:nth-of-type(8) a, .item:nth-of-type(8) img{
+    width: 25px;
+    height: auto;
+    margin: 5px 5px 0;
+}
+
+
+@media(max-width: 586px){
+
+    /* changing grid size containers */
+    .container{
+        grid-template-rows: 50px 100px 450px 200px 150px 400px 400px 100px;
+    }
+
+    /* decreasing padding surrounding contact forms */
+    .contact-form {
+        padding: 20px 20px 20px;
+    }
+
+    /*decreasing size of h1 text in CONTACT US and NO RESPONSE and AWARD WINNING SERVICE and AWARD TITLES headers*/
+    .item:nth-of-type(2) h1, .item:nth-of-type(4) h1{
+        font-size: 30px;
+    }
+    .item:nth-of-type(5) h1{
+        font-size: 25px;
+    }
+
+    /* extends award item accross all columns  */
+    .item:nth-of-type(6),.item:nth-of-type(7){
+        grid-column: 1/4;
+    } 
+
+    /* decreasing award titles text */
+    .award h1{
+        font-size: 25px;
+    }
+
+    /* decreasing size of award imgs */
+    .award img{
+        width: 150px;
+    }
+}
+
+
+@media(max-width: 338px){
+
+    /* changing grid size containers */
+    .container{
+        grid-template-rows: 50px 100px 400px 250px 150px 450px 450px 100px;
+    }
+
+    /*decreasing size of h1 text in CONTACT US and NO RESPONSE and AWARD SERVICE and footer TEDDY PORFIRIS headers*/
+    .item:nth-of-type(2) h1, .item:nth-of-type(8) h1{
+        font-size: 20px;
+    }
+    .item:nth-of-type(4) h1, .item:nth-of-type(5) h1{
+        font-size: 23px;
+    }
+
+
+}
