@@ -18,6 +18,7 @@ public class IntllQueue {
         return data.add(el);
     }
 
+    // test
     public Integer dequeue() {
         return data.removeFront();
     }
