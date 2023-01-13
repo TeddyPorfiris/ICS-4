@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Text</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="section">
+        <h1 class="title">Send Message</h1>
+        <textarea id="message" placeholder="Enter message" class="textarea mb-4"></textarea>
+        <div>
+            <input type="number" id="number" placeholder="Enter phone number" class="input mb-4">
+        </div>  
+        <div>
+            <button id="send" class="button is-fullwidth">Send</button>
+        </div>
+
+        <div class="popup-container"></div>
+    </div>
+
+
+
+    <script>
+        document.querySelector('#send').addEventListener('click', sendText);
+
+        async function sendText(){
+
+            let message = document.querySelector('#message').value; 
+            let number = document.querySelector('#number').value;
+
+            var myHeaders = new Headers();
+            //line for authorizxation (includes word basic, account SID and authtoken)
+            myHeaders.append("Authorization", "Basic QUM1YmI3M2U0YzBjMGVmYTdlOGIyN2JkMGNhOGRkMzJjYjo0NzQ0ODE0ZDVhOTFlZTMwZmY3ZTc0N2VkOTMwZjYxZQ==");
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+            var urlencoded = new URLSearchParams();
+            urlencoded.append("To", "+1"+number);
+            urlencoded.append("From", "+19499930677");
+            urlencoded.append("Body", message);
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: 'follow'
+            };
+
+            // fetch("https://api.twilio.com/2010-04-01/Accounts/AC5bb73e4c0c0efa7e8b27bd0ca8dd32cb/Messages.json", requestOptions)
+            // .then(response => response.text())
+            // .then(result => console.log(result))
+            // .catch(error => console.log('error', error));
+
+            let response = await fetch("https://api.twilio.com/2010-04-01/Accounts/AC5bb73e4c0c0efa7e8b27bd0ca8dd32cb/Messages.json", requestOptions);
+            let result = await response.text();
+            try{
+                console.log(result)
+                popup(true);
+            }catch{
+                console.log('error: ' + result);
+                popup(false);
+            }
+        }
+
+        function popup(message){
+
+            //creating popup
+            let notificationContainer = document.createElement('div');
+            notificationContainer.classList.add('notification');
+            if (message){
+                notificationContainer.classList.add('is-primary');
+                notificationContainer.textContent = 'Message Sent!';
+            }else{
+                notificationContainer.classList.add('is-danger');
+                notificationContainer.textContent = 'Something went wrong...'
+            }
+
+
+            notificationContainer.classList.add('mt-4');
+            notificationContainer.style.display = 'block';
+
+            let popupContainer = document.querySelector('.popup-container');
+            popupContainer.appendChild(notificationContainer)
+
+            //displaying popup and then it disapears after 2500 ms
+            setTimeout(() => {
+                notificationContainer.style.display = 'none';
+            }, 2500);
+
+        }
+
+
+    </script>
+</body>
+</html>

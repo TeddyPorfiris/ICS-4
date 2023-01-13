@@ -1,0 +1,7 @@
+/* not displaying certain columns when screen is at smaller width */
+@media(max-width: 758px){
+    #conf, #home, #road, #streak{
+        display: none;
+    }
+
+}

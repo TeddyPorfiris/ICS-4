@@ -1,0 +1,1054 @@
+teamsAFC
+
+[
+  {
+    "id": 1,
+    "city": "Baltimore",
+    "nickname": "Ravens",
+    "fullName": "Baltimore Ravens",
+    "wins": 1,
+    "losses": 0,
+    "ties": 0,
+    "PCT": "1.00",
+    "conf": "0-0-0",
+    "homeRec": "1-0-0",
+    "awayRec": "0-0-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "Baltimore Ravens",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 21,
+        "awayScore": 12,
+        "opp": "Atlanta Falcons",
+        "oppScore": 12,
+        "myScore": 21,
+        "date": "2022-11-13"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "city": "Denver",
+    "nickname": "Broncos",
+    "fullName": "Denver Broncos",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 4,
+    "city": "Jacksonville",
+    "nickname": "Jaguars",
+    "fullName": "Jacksonville Jaguars",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 9,
+    "city": "Miami",
+    "nickname": "Dolphins",
+    "fullName": "Miami Dolphins",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 13,
+    "city": "Las Vegas",
+    "nickname": "Raiders",
+    "fullName": "Las Vegas Raiders",
+    "wins": 3,
+    "losses": 0,
+    "ties": 0,
+    "PCT": "1.00",
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "3-0-0",
+    "streak": 3,
+    "games": [
+      {
+        "homeTeam": "Atlanta Falcons",
+        "awayTeam": "Las Vegas Raiders",
+        "homeScore": 4,
+        "awayScore": 53,
+        "opp": "Atlanta Falcons",
+        "oppScore": 4,
+        "myScore": 53,
+        "date": "2022-11-10"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Las Vegas Raiders",
+        "homeScore": 15,
+        "awayScore": 16,
+        "opp": "Green Bay Packers",
+        "oppScore": 15,
+        "myScore": 16,
+        "date": "2022-11-17"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Las Vegas Raiders",
+        "homeScore": 25,
+        "awayScore": 44,
+        "opp": "Green Bay Packers",
+        "oppScore": 25,
+        "myScore": 44,
+        "date": "2022-11-18"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "city": "New England",
+    "nickname": "Patriots",
+    "fullName": "New England Patriots",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 16,
+    "city": "New York",
+    "nickname": "Jets",
+    "fullName": "New York Jets",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 17,
+    "city": "Pittsburgh",
+    "nickname": "Steelers",
+    "fullName": "Pittsburgh Steelers",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 19,
+    "city": "Tennessee",
+    "nickname": "Titans",
+    "fullName": "Tennessee Titans",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 20,
+    "city": "Houston",
+    "nickname": "Texans",
+    "fullName": "Houston Texans",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 22,
+    "city": "Indianapolis",
+    "nickname": "Colts",
+    "fullName": "Indianapolis Colts",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 28,
+    "city": "Buffalo",
+    "nickname": "Bills",
+    "fullName": "Buffalo Bills",
+    "wins": 0,
+    "losses": 1,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-1-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": [
+      {
+        "homeTeam": "Buffalo Bills",
+        "awayTeam": "Arizona Cardinals",
+        "homeScore": 2,
+        "awayScore": 34,
+        "opp": "Arizona Cardinals",
+        "oppScore": 34,
+        "myScore": 2,
+        "date": "2022-11-05"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "city": "Cincinnati",
+    "nickname": "Bengals",
+    "fullName": "Cincinnati Bengals",
+    "wins": 1,
+    "losses": 1,
+    "ties": 0,
+    "PCT": "0.50",
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "1-1-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Cincinnati Bengals",
+        "homeScore": 11,
+        "awayScore": 5,
+        "opp": "Arizona Cardinals",
+        "oppScore": 11,
+        "myScore": 5,
+        "date": "2022-11-12"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Cincinnati Bengals",
+        "homeScore": 34,
+        "awayScore": 54,
+        "opp": "Arizona Cardinals",
+        "oppScore": 34,
+        "myScore": 54,
+        "date": "2022-11-14"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "city": "Cleveland",
+    "nickname": "Browns",
+    "fullName": "Cleveland Browns",
+    "wins": 0,
+    "losses": 1,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-1-0",
+    "streak": 0,
+    "games": [
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Cleveland Browns",
+        "homeScore": 21,
+        "awayScore": 4,
+        "opp": "Arizona Cardinals",
+        "oppScore": 21,
+        "myScore": 4,
+        "date": "2022-11-08"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "city": "Kansas City",
+    "nickname": "Chiefs",
+    "fullName": "Kansas City Chiefs",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 32,
+    "city": "Los Angeles",
+    "nickname": "Chargers",
+    "fullName": "Los Angeles Chargers",
+    "wins": 1,
+    "losses": 0,
+    "ties": 0,
+    "PCT": "1.00",
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "1-0-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Los Angeles Chargers",
+        "homeScore": 24,
+        "awayScore": 56,
+        "opp": "Arizona Cardinals",
+        "oppScore": 24,
+        "myScore": 56,
+        "date": "2022-11-10"
+      }
+    ]
+  }
+]
+
+
+
+
+
+teamsNFC
+
+[
+  {
+    "id": 18,
+    "city": "Philadelphia",
+    "nickname": "Eagles",
+    "fullName": "Philadelphia Eagles",
+    "wins": 0,
+    "losses": 1,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-1-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-1-0",
+    "streak": 0,
+    "games": [
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Philadelphia Eagles",
+        "homeScore": 24,
+        "awayScore": 12,
+        "opp": "Arizona Cardinals",
+        "oppScore": 24,
+        "myScore": 12,
+        "date": "2022-11-19"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "city": "Minnesota",
+    "nickname": "Vikings",
+    "fullName": "Minnesota Vikings",
+    "wins": 1,
+    "losses": 0,
+    "ties": 0,
+    "PCT": "1.00",
+    "conf": "1-0-0",
+    "homeRec": "1-0-0",
+    "awayRec": "0-0-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "Minnesota Vikings",
+        "awayTeam": "Green Bay Packers",
+        "homeScore": 24,
+        "awayScore": 12,
+        "opp": "Green Bay Packers",
+        "oppScore": 12,
+        "myScore": 24,
+        "date": "2022-11-20"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "city": "Seattle",
+    "nickname": "Seahawks",
+    "fullName": "Seattle Seahawks",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 6,
+    "city": "Atlanta",
+    "nickname": "Falcons",
+    "fullName": "Atlanta Falcons",
+    "wins": 2,
+    "losses": 5,
+    "ties": 0,
+    "PCT": "0.29",
+    "conf": "2-3-0",
+    "homeRec": "0-2-0",
+    "awayRec": "2-3-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 46,
+        "awayScore": 3,
+        "opp": "Arizona Cardinals",
+        "oppScore": 46,
+        "myScore": 3,
+        "date": "2022-11-01"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 33,
+        "awayScore": 35,
+        "opp": "Arizona Cardinals",
+        "oppScore": 33,
+        "myScore": 35,
+        "date": "2022-11-03"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 21,
+        "awayScore": 3,
+        "opp": "Arizona Cardinals",
+        "oppScore": 21,
+        "myScore": 3,
+        "date": "2022-11-04"
+      },
+      {
+        "homeTeam": "Atlanta Falcons",
+        "awayTeam": "Las Vegas Raiders",
+        "homeScore": 4,
+        "awayScore": 53,
+        "opp": "Las Vegas Raiders",
+        "oppScore": 53,
+        "myScore": 4,
+        "date": "2022-11-10"
+      },
+      {
+        "homeTeam": "Atlanta Falcons",
+        "awayTeam": "Green Bay Packers",
+        "homeScore": 43,
+        "awayScore": 51,
+        "opp": "Green Bay Packers",
+        "oppScore": 51,
+        "myScore": 43,
+        "date": "2022-11-12"
+      },
+      {
+        "homeTeam": "Baltimore Ravens",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 21,
+        "awayScore": 12,
+        "opp": "Baltimore Ravens",
+        "oppScore": 21,
+        "myScore": 12,
+        "date": "2022-11-13"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 12,
+        "awayScore": 55,
+        "opp": "Green Bay Packers",
+        "oppScore": 12,
+        "myScore": 55,
+        "date": "2022-11-15"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "city": "Dallas",
+    "nickname": "Cowboys",
+    "fullName": "Dallas Cowboys",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 25,
+    "city": "New York",
+    "nickname": "Giants",
+    "fullName": "New York Giants",
+    "wins": 1,
+    "losses": 0,
+    "ties": 0,
+    "PCT": "1.00",
+    "conf": "1-0-0",
+    "homeRec": "1-0-0",
+    "awayRec": "0-0-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "New York Giants",
+        "awayTeam": "Green Bay Packers",
+        "homeScore": 15,
+        "awayScore": 10,
+        "opp": "Green Bay Packers",
+        "oppScore": 10,
+        "myScore": 15,
+        "date": "2022-11-21"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "city": "San Fransisco",
+    "nickname": "49ers",
+    "fullName": "San Fransisco 49ers",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 21,
+    "city": "Washington",
+    "nickname": "Commanders",
+    "fullName": "Washington Commanders",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 24,
+    "city": "Los Angeles",
+    "nickname": "Rams",
+    "fullName": "Los Angeles Rams",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 2,
+    "city": "Tampa Bay",
+    "nickname": "Buccaneers",
+    "fullName": "Tampa Bay Buccaneers",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 27,
+    "city": "Green Bay",
+    "nickname": "Packers",
+    "fullName": "Green Bay Packers",
+    "wins": 2,
+    "losses": 5,
+    "ties": 0,
+    "PCT": "0.29",
+    "conf": "2-3-0",
+    "homeRec": "1-3-0",
+    "awayRec": "1-2-0",
+    "streak": 0,
+    "games": [
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Arizona Cardinals",
+        "homeScore": 55,
+        "awayScore": 4,
+        "opp": "Arizona Cardinals",
+        "oppScore": 4,
+        "myScore": 55,
+        "date": "2022-11-07"
+      },
+      {
+        "homeTeam": "Atlanta Falcons",
+        "awayTeam": "Green Bay Packers",
+        "homeScore": 43,
+        "awayScore": 51,
+        "opp": "Atlanta Falcons",
+        "oppScore": 43,
+        "myScore": 51,
+        "date": "2022-11-12"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 12,
+        "awayScore": 55,
+        "opp": "Atlanta Falcons",
+        "oppScore": 55,
+        "myScore": 12,
+        "date": "2022-11-15"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Las Vegas Raiders",
+        "homeScore": 15,
+        "awayScore": 16,
+        "opp": "Las Vegas Raiders",
+        "oppScore": 16,
+        "myScore": 15,
+        "date": "2022-11-17"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Las Vegas Raiders",
+        "homeScore": 25,
+        "awayScore": 44,
+        "opp": "Las Vegas Raiders",
+        "oppScore": 44,
+        "myScore": 25,
+        "date": "2022-11-18"
+      },
+      {
+        "homeTeam": "Minnesota Vikings",
+        "awayTeam": "Green Bay Packers",
+        "homeScore": 24,
+        "awayScore": 12,
+        "opp": "Minnesota Vikings",
+        "oppScore": 24,
+        "myScore": 12,
+        "date": "2022-11-20"
+      },
+      {
+        "homeTeam": "New York Giants",
+        "awayTeam": "Green Bay Packers",
+        "homeScore": 15,
+        "awayScore": 10,
+        "opp": "New York Giants",
+        "oppScore": 15,
+        "myScore": 10,
+        "date": "2022-11-21"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "city": "Arizona",
+    "nickname": "Cardinals",
+    "fullName": "Arizona Cardinals",
+    "wins": 6,
+    "losses": 4,
+    "ties": 0,
+    "PCT": "0.60",
+    "conf": "3-2-0",
+    "homeRec": "5-3-0",
+    "awayRec": "1-1-0",
+    "streak": 1,
+    "games": [
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 46,
+        "awayScore": 3,
+        "opp": "Atlanta Falcons",
+        "oppScore": 3,
+        "myScore": 46,
+        "date": "2022-11-01"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 33,
+        "awayScore": 35,
+        "opp": "Atlanta Falcons",
+        "oppScore": 35,
+        "myScore": 33,
+        "date": "2022-11-03"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Atlanta Falcons",
+        "homeScore": 21,
+        "awayScore": 3,
+        "opp": "Atlanta Falcons",
+        "oppScore": 3,
+        "myScore": 21,
+        "date": "2022-11-04"
+      },
+      {
+        "homeTeam": "Buffalo Bills",
+        "awayTeam": "Arizona Cardinals",
+        "homeScore": 2,
+        "awayScore": 34,
+        "opp": "Buffalo Bills",
+        "oppScore": 2,
+        "myScore": 34,
+        "date": "2022-11-05"
+      },
+      {
+        "homeTeam": "Green Bay Packers",
+        "awayTeam": "Arizona Cardinals",
+        "homeScore": 55,
+        "awayScore": 4,
+        "opp": "Green Bay Packers",
+        "oppScore": 55,
+        "myScore": 4,
+        "date": "2022-11-07"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Cleveland Browns",
+        "homeScore": 21,
+        "awayScore": 4,
+        "opp": "Cleveland Browns",
+        "oppScore": 4,
+        "myScore": 21,
+        "date": "2022-11-08"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Los Angeles Chargers",
+        "homeScore": 24,
+        "awayScore": 56,
+        "opp": "Los Angeles Chargers",
+        "oppScore": 56,
+        "myScore": 24,
+        "date": "2022-11-10"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Cincinnati Bengals",
+        "homeScore": 11,
+        "awayScore": 5,
+        "opp": "Cincinnati Bengals",
+        "oppScore": 5,
+        "myScore": 11,
+        "date": "2022-11-12"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Cincinnati Bengals",
+        "homeScore": 34,
+        "awayScore": 54,
+        "opp": "Cincinnati Bengals",
+        "oppScore": 54,
+        "myScore": 34,
+        "date": "2022-11-14"
+      },
+      {
+        "homeTeam": "Arizona Cardinals",
+        "awayTeam": "Philadelphia Eagles",
+        "homeScore": 24,
+        "awayScore": 12,
+        "opp": "Philadelphia Eagles",
+        "oppScore": 12,
+        "myScore": 24,
+        "date": "2022-11-19"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "city": "New Orleans",
+    "nickname": "Saints",
+    "fullName": "New Orleans Saints",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 7,
+    "city": "Chicago",
+    "nickname": "Bears",
+    "fullName": "Chicago Bears",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 5,
+    "city": "Carolina",
+    "nickname": "Panthers",
+    "fullName": "Carolina Panthers",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  },
+  {
+    "id": 10,
+    "city": "Detroit",
+    "nickname": "Lions",
+    "fullName": "Detroit Lions",
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "PCT": 0,
+    "conf": "0-0-0",
+    "homeRec": "0-0-0",
+    "awayRec": "0-0-0",
+    "streak": 0,
+    "games": []
+  }
+]
+
+
+
+
+gamesArray
+
+[
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Atlanta Falcons",
+    "homeScore": 46,
+    "awayScore": 3,
+    "opp": "Atlanta Falcons",
+    "oppScore": 3,
+    "myScore": 46,
+    "date": "2022-11-01"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Atlanta Falcons",
+    "homeScore": 33,
+    "awayScore": 35,
+    "opp": "Atlanta Falcons",
+    "oppScore": 35,
+    "myScore": 33,
+    "date": "2022-11-03"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Atlanta Falcons",
+    "homeScore": 21,
+    "awayScore": 3,
+    "opp": "Atlanta Falcons",
+    "oppScore": 3,
+    "myScore": 21,
+    "date": "2022-11-04"
+  },
+  {
+    "homeTeam": "Buffalo Bills",
+    "awayTeam": "Arizona Cardinals",
+    "homeScore": 2,
+    "awayScore": 34,
+    "opp": "Arizona Cardinals",
+    "oppScore": 34,
+    "myScore": 2,
+    "date": "2022-11-05"
+  },
+  {
+    "homeTeam": "Green Bay Packers",
+    "awayTeam": "Arizona Cardinals",
+    "homeScore": 55,
+    "awayScore": 4,
+    "opp": "Arizona Cardinals",
+    "oppScore": 4,
+    "myScore": 55,
+    "date": "2022-11-07"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Cleveland Browns",
+    "homeScore": 21,
+    "awayScore": 4,
+    "opp": "Cleveland Browns",
+    "oppScore": 4,
+    "myScore": 21,
+    "date": "2022-11-08"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Los Angeles Chargers",
+    "homeScore": 24,
+    "awayScore": 56,
+    "opp": "Los Angeles Chargers",
+    "oppScore": 56,
+    "myScore": 24,
+    "date": "2022-11-10"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Cincinnati Bengals",
+    "homeScore": 11,
+    "awayScore": 5,
+    "opp": "Cincinnati Bengals",
+    "oppScore": 5,
+    "myScore": 11,
+    "date": "2022-11-12"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Cincinnati Bengals",
+    "homeScore": 34,
+    "awayScore": 54,
+    "opp": "Cincinnati Bengals",
+    "oppScore": 54,
+    "myScore": 34,
+    "date": "2022-11-14"
+  },
+  {
+    "homeTeam": "Atlanta Falcons",
+    "awayTeam": "Las Vegas Raiders",
+    "homeScore": 4,
+    "awayScore": 53,
+    "opp": "Las Vegas Raiders",
+    "oppScore": 53,
+    "myScore": 4,
+    "date": "2022-11-10"
+  },
+  {
+    "homeTeam": "Atlanta Falcons",
+    "awayTeam": "Green Bay Packers",
+    "homeScore": 43,
+    "awayScore": 51,
+    "opp": "Green Bay Packers",
+    "oppScore": 51,
+    "myScore": 43,
+    "date": "2022-11-12"
+  },
+  {
+    "homeTeam": "Baltimore Ravens",
+    "awayTeam": "Atlanta Falcons",
+    "homeScore": 21,
+    "awayScore": 12,
+    "opp": "Atlanta Falcons",
+    "oppScore": 12,
+    "myScore": 21,
+    "date": "2022-11-13"
+  },
+  {
+    "homeTeam": "Green Bay Packers",
+    "awayTeam": "Atlanta Falcons",
+    "homeScore": 12,
+    "awayScore": 55,
+    "opp": "Atlanta Falcons",
+    "oppScore": 55,
+    "myScore": 12,
+    "date": "2022-11-15"
+  },
+  {
+    "homeTeam": "Green Bay Packers",
+    "awayTeam": "Las Vegas Raiders",
+    "homeScore": 15,
+    "awayScore": 16,
+    "opp": "Las Vegas Raiders",
+    "oppScore": 16,
+    "myScore": 15,
+    "date": "2022-11-17"
+  },
+  {
+    "homeTeam": "Green Bay Packers",
+    "awayTeam": "Las Vegas Raiders",
+    "homeScore": 25,
+    "awayScore": 44,
+    "opp": "Las Vegas Raiders",
+    "oppScore": 44,
+    "myScore": 25,
+    "date": "2022-11-18"
+  },
+  {
+    "homeTeam": "Arizona Cardinals",
+    "awayTeam": "Philadelphia Eagles",
+    "homeScore": 24,
+    "awayScore": 12,
+    "opp": "Philadelphia Eagles",
+    "oppScore": 12,
+    "myScore": 24,
+    "date": "2022-11-19"
+  },
+  {
+    "homeTeam": "Minnesota Vikings",
+    "awayTeam": "Green Bay Packers",
+    "homeScore": 24,
+    "awayScore": 12,
+    "opp": "Green Bay Packers",
+    "oppScore": 12,
+    "myScore": 24,
+    "date": "2022-11-20"
+  },
+  {
+    "homeTeam": "New York Giants",
+    "awayTeam": "Green Bay Packers",
+    "homeScore": 15,
+    "awayScore": 10,
+    "opp": "Green Bay Packers",
+    "oppScore": 10,
+    "myScore": 15,
+    "date": "2022-11-21"
+  }
+]
+
