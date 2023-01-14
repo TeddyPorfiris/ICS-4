@@ -51,9 +51,9 @@ public class IntllStack {
         if(isEmpty()){
             return -1;
         } else {
-            for (int i = manyItems; i > 0; i++) {
+            for (int i = 0; i < manyItems; i++) {
                 if(curr.getData() == data){
-                    return pft;
+                    return manyItems-pft;
                 } else {
                     pft++;
                     curr = curr.getLink();
@@ -114,6 +114,6 @@ public class IntllStack {
     
     public int size() {
         return manyItems;
-     }
+    }
 
 }

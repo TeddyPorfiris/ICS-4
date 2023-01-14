@@ -51,7 +51,7 @@ public class IntArrayStack {
 
     public Integer peek(){
         if (stack.length != 0)
-            return stack[0];
+            return stack[stack.length-1];
         else
             return null;
     }

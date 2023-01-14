@@ -66,9 +66,13 @@ public class TestStack {
 
     private static boolean testPush(){
         // IntArrayStack stack = prepareArrayStack();
+        // stack.push(6);
+        // if(stack.get(5) != 6 || stack.size() != 6)
+        //     return false;
+        
         IntllStack stack = preparellStack();
         stack.push(6);
-        if(stack.get(5) != 6 || stack.size() != 6)
+        if(stack.get(0) != 6 || stack.size() != 6)
             return false;
         
         return true;
@@ -76,9 +80,14 @@ public class TestStack {
 
     private static boolean testPop(){
         //IntArrayStack stack = prepareArrayStack();
+        // stack.pop();
+        // if(stack.get(3) != 4 || stack.size() != 4)
+        //     return false;
+        
+        
         IntllStack stack = preparellStack();
         stack.pop();
-        if(stack.get(3) != 4 || stack.size() != 4)
+        if(stack.get(0) != 4 || stack.size() != 4)
             return false;
     
         return true;
@@ -96,10 +105,10 @@ public class TestStack {
     }
 
     private static boolean testPeek(){
-        //IntArrayStack stack = prepareArrayStack();
+        // IntArrayStack stack = prepareArrayStack();
         IntllStack stack = preparellStack();
 
-        if (stack.peek() != 1)
+        if (stack.peek() != 5)
             return false;
 
         return true;
@@ -117,36 +126,3 @@ public class TestStack {
 
 }
 
-
-// private static void testIntArrayStack(){
-//     IntArrayStack arr = new IntArrayStack();
-//     // arr.pop();
-//     arr.push(1);
-//     arr.push(2);
-//     arr.push(3);
-//     System.out.println(arr);
-//     System.out.println(arr.search(3));
-//     arr.pop();
-//     System.out.println(arr);
-//     System.out.println(arr.empty());
-//     System.out.println(arr.peek()); 
-// }
-
-
-// private static void testIntllStack() {
-//     IntllStack stack = new IntllStack();
-//     // System.out.println(stack.isEmpty());
-//     Integer temp = stack.pop();
-//     stack.push(1);
-//     stack.push(2);
-//     stack.push(3);
-//     stack.push(4);
-//     stack.push(5);
-//     System.out.println(stack);
-//     temp = stack.pop();
-//     System.out.println(temp);
-//     System.out.println(stack);
-//     stack.peek();
-//     System.out.println(stack.isEmpty());
-//     System.out.println(stack.search(3));
-// }

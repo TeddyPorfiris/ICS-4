@@ -1,7 +1,7 @@
 public class IntllQueue {
     private IntLinkedList data;
 
-    //Linked list implementation of a queue where the front of the liked list is the front of the queue
+    //Linked list implementation of a queue where the front of the linked list is the front of the queue
     public IntllQueue(){
         data = new IntLinkedList();
     }
@@ -18,8 +18,20 @@ public class IntllQueue {
         return data.add(el);
     }
 
-    // test
+
     public Integer dequeue() {
         return data.removeFront();
+    }
+
+    public Integer peek(){
+        return data.get(0);
+    }
+
+    public Integer get(int index){
+        return data.get(index);
+    }
+
+    public int size() {
+        return data.size();
     }
 }
