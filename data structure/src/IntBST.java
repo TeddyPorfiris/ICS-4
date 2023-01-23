@@ -199,11 +199,15 @@ public class IntBST {
         if (root == null)
            return root;
   
-        //recurses until val and root have the same value
+        //if the val we are looking for is less than the val at top of the tree (root)
         if (val < root.getValue()) {
+            //get left subtree
            root.setLeftChild(removeRecursive(root.getLeftChild(), val));
+        //if the val we are looking for is more than the val at the top of the tree (root)
         } else if (val > root.getValue()) {
+            //get right subtree
            root.setRightChild(removeRecursive(root.getRightChild(), val));
+        //we found the node we are looking for (with a value of val)
         } else {
             //if no left child, set the node you are removing to its right child
            if (root.getLeftChild() == null) {
@@ -211,11 +215,11 @@ public class IntBST {
             //if no right child, set the node you are removing to its left child
            } else if (root.getRightChild() == null) {
               return root.getLeftChild();
-            //if both left and right child, find the largest node in left branch and set the node you are removing to that largest node
+            //if both left and right child, find the smallest node in right branch and set the node you are removing to that smallest node
            } else {
               Integer biggest = findSmallest(root.getRightChild());
               root.setValue(biggest);
-              root.setRightChild(removeRecursive(root.getRightChild(), root.getValue()));
+              root.setRightChild(removeRecursive(root.getRightChild(), root.getValue())); //removes the smallest node in right branch since there are two of them now in the tree
            }
         }
   
