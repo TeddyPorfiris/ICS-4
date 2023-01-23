@@ -97,21 +97,21 @@ public class TestIntBST {
 
     private static boolean testPreOrderPrintTraversal(){
         IntBST bst = prepareIntBST();
-        if (bst.preOrderPrintTraversal() != "6318713911")
+        if (!bst.preOrderPrintTraversal().equals(" 6 3 1 8 7 13 9 11"))
             return false;
         return true;
     }
 
     private static boolean testPostOrderPrintTraversal(){
         IntBST bst = prepareIntBST();
-        if (bst.postOrderPrintTraversal() != "1371191386")
+        if (!bst.postOrderPrintTraversal().equals(" 1 3 7 11 9 13 8 6"))
             return false;
         return true;
     }
 
     private static boolean testInOrderPrintTraversal(){
         IntBST bst = prepareIntBST();
-        if (bst.inOrderPrintTraversal() != "1367891113")
+        if (!bst.inOrderPrintTraversal().equals(" 1 3 6 7 8 9 11 13"))
             return false;
         return true;
     }

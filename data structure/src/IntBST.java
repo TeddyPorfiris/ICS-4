@@ -1,8 +1,6 @@
 public class IntBST {
     private IntBSTNode root;
-    private String tempPre = "";
-    private String tempPost = "";
-    private String tempIn = "";
+
 
     public IntBST() {
         this.root = null;
@@ -11,78 +9,79 @@ public class IntBST {
 
 
     public String preOrderPrintTraversal(){
-        tempPre = "";
-        preOrderPrintTraversal(root);
-        return orderString("pre");
+        String result = "";
+        result += preOrderPrintTraversal(root, result);
+        return result;
     }
 
 
     public String postOrderPrintTraversal(){
-        tempPost = "";
-        postOrderPrintTraversal(root);
-        return orderString("post");
+        String result = "";
+        result += postOrderPrintTraversal(root, result);
+        return result;
+
         
     }
 
     public String inOrderPrintTraversal(){
-        tempIn = "";
-        inOrderPrintTraversal(root);
-        return orderString("in");
+        String result = "";
+        result += inOrderPrintTraversal(root, result);
+        return result;
+
     }
 
-    private void preOrderPrintTraversal(IntBSTNode root){
+    private String preOrderPrintTraversal(IntBSTNode root, String result){
 
-        tempPre = tempPre + root.getValue();
+        result += " " + root.getValue();
 
         if (root.hasLeftChild()){
-            preOrderPrintTraversal(root.getLeftChild());
+            result = preOrderPrintTraversal(root.getLeftChild(), result);
         }
         
         if (root.hasRightChild()){
-            preOrderPrintTraversal(root.getRightChild());
+            result = preOrderPrintTraversal(root.getRightChild(), result);
         }
 
+        return result;
         
         
     }
 
 
-    private void postOrderPrintTraversal(IntBSTNode root){
+    private String postOrderPrintTraversal(IntBSTNode root, String result){
         
         
         if (root.hasLeftChild()){
-            postOrderPrintTraversal(root.getLeftChild());
+            result = postOrderPrintTraversal(root.getLeftChild(), result);
         }
         
         if (root.hasRightChild()){
-            postOrderPrintTraversal(root.getRightChild());
-        } 
-        
-        tempPost = tempPost + root.getValue();
-    }
-
-    private void inOrderPrintTraversal(IntBSTNode root){
-        
-        if (root.hasLeftChild()){
-            inOrderPrintTraversal(root.getLeftChild());
-        }
-
-        tempIn = tempIn + root.getValue();
-        
-        if (root.hasRightChild()){
-            inOrderPrintTraversal(root.getRightChild());
+            result = postOrderPrintTraversal(root.getRightChild(), result);
         } 
 
+        result += " " + root.getValue();
+
+        return result;
+        
+
     }
 
-    private String orderString(String type) {
-        if (type == "pre")
-            return tempPre;
-        else if (type == "post")
-            return tempPost;
-        else
-            return tempIn;
+    private String inOrderPrintTraversal(IntBSTNode root, String result){
+        
+        if (root.hasLeftChild()){
+            result = inOrderPrintTraversal(root.getLeftChild(), result);
+        }
+
+        result += " " + root.getValue();
+        
+        if (root.hasRightChild()){
+            result = inOrderPrintTraversal(root.getRightChild(), result);
+        } 
+
+        return result;
+
     }
+
 
 
     public IntBSTNode add(Integer val){
