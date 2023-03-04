@@ -50,5 +50,16 @@ app.put('/api/students/:id', (req, res)=> {
     res.send(student)
 })
 
+
+app.delete('/api/students/:id', (req, res)=> {
+    const student = students.find(s => s.id === parseInt(req.params.id))
+    if (!student) return res.status(404).send('Student not found')
+
+    const index = students.indexOf(student)
+    students.splice(index, 1)
+    
+    res.send(student)
+})
+
 //once app starts to listen to that port, console.log
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
