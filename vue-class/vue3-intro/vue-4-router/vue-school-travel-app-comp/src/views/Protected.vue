@@ -9,11 +9,12 @@
   </template>
   <script setup>
   import { ref } from 'vue'
+  import $router from '@/router/index.js'
 
   const username = ref(window.user)
   const logout = ()=>{
     window.user = null
-    this.$router.push({name: 'Home', query: {logout: null}})
+    $router.push({name: 'Home', query: {logout: null}})
   }
 
   </script>

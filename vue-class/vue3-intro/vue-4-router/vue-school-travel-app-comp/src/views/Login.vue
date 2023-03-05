@@ -20,7 +20,7 @@
       const router = useRouter()
       const route = useRoute()
       const login = ()=>{
-        window.user = this.username
+        window.user = username
         const redirectPath = route.query.redirect || '/protected'
         router.push(redirectPath)
       }
