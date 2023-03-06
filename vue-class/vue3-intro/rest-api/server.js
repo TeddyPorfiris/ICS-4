@@ -10,7 +10,7 @@ app.use(express.json())
 
 //create endpoint (routes)
 //if they make a get request to the path /, we will send this response
-// app.get('/', (req, res)=> res.send('Hello Ted!'))
+app.get('/', (req, res)=> res.send('Hello World!'))
 
 let students = [
     {id:1, name: 'Ted', age: 16},
